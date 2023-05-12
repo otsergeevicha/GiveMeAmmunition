@@ -1,40 +1,32 @@
-﻿using Services.SaveLoadLogic;
-using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using Services.SaveLoadLogic;
 
 namespace Infrastructure.SaveLoadLogic
 {
     public class SaveLoad : ISave
     {
-        private DataBase _dataBase;
+        private readonly Dictionary<Type, object> _datas = new ();
+        private readonly DataBase _dataBase;
 
-        public SaveLoad()
-        {
-            _dataBase = PlayerPrefs.HasKey(Constants.Key)
-                ? JsonUtility.FromJson<DataBase>(PlayerPrefs.GetString(Constants.Key))
-                : new DataBase();
-        }
-
-        public TData TryGetData<TData>(TData data)
-        {
-            return _dataBase.ActualData
-                .TryGetValue(ConvertToJson(data), out string actualData) 
-                ? JsonUtility.FromJson<TData>(actualData) 
-                : data;
-        }
+        public SaveLoad() : this(new DataBase()) {}
         
-        public void UpdateDate<TData>(TData data)
+        public SaveLoad(DataBase dataBase) => 
+            _dataBase = dataBase;
+
+        public TData Get<TData>()
         {
-            _dataBase.ActualData.Add(ConvertToJson(data));
-            Save();
+            if (_datas.ContainsKey(typeof(TData)))
+                return (TData)_datas[typeof(TData)];
+
+            return _dataBase.Get<TData>();
         }
 
-        private void Save()
+        public void Add<T>(T data)
         {
-            PlayerPrefs.SetString(Constants.Key, ConvertToJson(_dataBase));
-            PlayerPrefs.Save();
-        }
+            _datas[typeof(T)] = data;
 
-        private string ConvertToJson<TData>(TData data) => 
-            JsonUtility.ToJson(data);
+            _dataBase.Set(data);
+        }
     }
 }
