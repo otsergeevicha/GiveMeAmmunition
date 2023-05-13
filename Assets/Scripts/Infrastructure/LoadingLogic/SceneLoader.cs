@@ -15,7 +15,8 @@ namespace Infrastructure.LoadingLogic
             }
 
             AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(nextScene);
-            waitNextScene.completed += _ => onLoaded?.Invoke();
+            waitNextScene.completed += _ => 
+                onLoaded?.Invoke();
         }
     }
 } 

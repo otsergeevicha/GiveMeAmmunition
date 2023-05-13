@@ -14,15 +14,17 @@ namespace Infrastructure.SaveLoadLogic
 
         public TData Get<TData>()
         {
-            string serializeObject = PlayerPrefs.GetString(typeof(TData).FullName);
+            string serializeObject = PlayerPrefs
+                .GetString(typeof(TData).FullName);
 
             if (serializeObject == null)
                 return default(TData);
 
-            DataWrapper<TData> wrapper = JsonUtility.FromJson<DataWrapper<TData>>(serializeObject);
+            DataWrapper<TData> wrapper = JsonUtility
+                .FromJson<DataWrapper<TData>>(serializeObject);
 
-            return wrapper == null 
-                ? default(TData) 
+            return wrapper == null
+                ? default(TData)
                 : wrapper.Value;
         }
     }
