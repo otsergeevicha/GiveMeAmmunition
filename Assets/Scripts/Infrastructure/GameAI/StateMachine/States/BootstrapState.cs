@@ -40,10 +40,10 @@ namespace Infrastructure.GameAI.StateMachine.States
 
         private void RegisterServices()
         {
-            AllServices.Container.RegisterSingle<ISave>(new SaveLoad());
-            AllServices.Container.RegisterSingle<IInputService>(new InputService());
-            AllServices.Container.RegisterSingle<IAssetsProvider>(new AssetsProvider());
-            AllServices.Container.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssetsProvider>()));
+            ServiceRouter.Container.RegisterSingle<ISave>(new SaveLoad());
+            ServiceRouter.Container.RegisterSingle<IInputService>(new InputService());
+            ServiceRouter.Container.RegisterSingle<IAssetsProvider>(new AssetsProvider());
+            ServiceRouter.Container.RegisterSingle<IGameFactory>(new GameFactory(ServiceRouter.Container.Single<IAssetsProvider>()));
         }
     }
 }

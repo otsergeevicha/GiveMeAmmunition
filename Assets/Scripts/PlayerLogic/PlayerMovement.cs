@@ -21,7 +21,7 @@ namespace PlayerLogic
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            _inputService = AllServices.Container.Single<IInputService>();
+            _inputService = ServiceRouter.Container.Single<IInputService>();
         }
 
         private void Start()
