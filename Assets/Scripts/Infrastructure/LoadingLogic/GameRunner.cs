@@ -1,9 +1,8 @@
-﻿using Plugins.MonoCache;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Infrastructure.LoadingLogic
 {
-    public class GameRunner : MonoCache
+    public class GameRunner : MonoBehaviour
     {
         [SerializeField] private GameBootstrapper _gameBootstrapper;
 

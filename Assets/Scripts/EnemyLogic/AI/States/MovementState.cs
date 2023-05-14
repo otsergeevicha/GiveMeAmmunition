@@ -1,5 +1,4 @@
-﻿using UniRx;
-using UniRx.Triggers;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,27 +10,26 @@ namespace EnemyLogic.AI.States
         private Transform _target;
         private Collider _trigger;
 
-        private CompositeDisposable _disposable = new();
-
         public MovementState(NavMeshAgent agent, Transform target)
         {
             _agent = agent;
             _target = target;
         }
 
-        public override void Enable()
-        {
-            Observable.EveryUpdate()
-                .Subscribe(_ => { Move(); }).AddTo(_disposable);
-        }
+        public override void Enable() => 
+            Move();
 
-        public override void Disable() => 
-            _disposable.Clear();
+        public override void Disable() {}
 
-        private void Move()
+        private async void Move()
         {
-            if (PurposeNotReached()) 
-                _agent.SetDestination(_target.position);
+            while (_agent != null)
+            {
+                if (PurposeNotReached())
+                    _agent.SetDestination(_target.position);
+                
+                await UniTask.Yield(PlayerLoopTiming.Update);
+            }
         }
 
         private bool PurposeNotReached() =>

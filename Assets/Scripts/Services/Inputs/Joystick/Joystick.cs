@@ -1,5 +1,4 @@
-﻿using Plugins.MonoCache;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.OnScreen;
 
@@ -11,7 +10,7 @@ namespace Services.Inputs.Joystick
         Floating
     }
 
-    public class Joystick : MonoCache, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         [SerializeField] private RectTransform _centerArea;
         [SerializeField] private RectTransform _handle;

@@ -1,11 +1,10 @@
 ﻿using Infrastructure.GameAI.StateMachine.States;
 using Infrastructure.LoadingLogic.ScreenLoading;
-using Plugins.MonoCache;
 using UnityEngine;
 
 namespace Infrastructure.LoadingLogic
 {
-    public class GameBootstrapper : MonoCache
+    public class GameBootstrapper : MonoBehaviour
     {
         [SerializeField] private LoadingCurtain _curtain;
         
