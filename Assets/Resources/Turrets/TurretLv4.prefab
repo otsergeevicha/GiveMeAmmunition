@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013081111600}
   m_Layer: 0
-  m_Name: Turret 1d
+  m_Name: TurretLv4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

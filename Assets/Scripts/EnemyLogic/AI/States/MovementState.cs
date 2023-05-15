@@ -1,5 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 namespace EnemyLogic.AI.States
@@ -21,15 +20,10 @@ namespace EnemyLogic.AI.States
 
         public override void Disable() {}
 
-        private async void Move()
+        private void Move()
         {
-            while (_agent != null)
-            {
-                if (PurposeNotReached())
-                    _agent.SetDestination(_target.position);
-                
-                await UniTask.Yield(PlayerLoopTiming.Update);
-            }
+            if (PurposeNotReached())
+                _agent.SetDestination(_target.position);
         }
 
         private bool PurposeNotReached() =>

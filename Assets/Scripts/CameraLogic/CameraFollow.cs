@@ -1,9 +1,10 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Plugins.MonoCache;
 using UnityEngine;
 
 namespace CameraLogic
 {
-    public class CameraFollow : MonoBehaviour
+    public class CameraFollow : MonoCache
     {
         [SerializeField] private Transform _following;
 
@@ -16,19 +17,14 @@ namespace CameraLogic
         [SerializeField] private float _offsetX;
         [SerializeField] private float _offsetY;
         [SerializeField] private float _offsetZ;
-
+        
+        private Transform _cameraTransform;
+        
         private void Start() => 
-            LateRun();
+            _cameraTransform = transform;
 
-        private async void LateRun()
-        {
-            while (_following != null)
-            {
-                BaseLogic();
-                
-                await UniTask.Yield(PlayerLoopTiming.PreLateUpdate);
-            }
-        }
+        protected override void LateUpdateCached() => 
+            BaseLogic();
 
         public void Follow(GameObject following) =>
             _following = following.transform;
@@ -39,8 +35,8 @@ namespace CameraLogic
 
             Vector3 position = rotation * new Vector3(0, 0, -_distance) + FollowingPosition();
 
-            transform.rotation = rotation;
-            transform.position = position;
+            _cameraTransform.rotation = rotation;
+            _cameraTransform.position = position;
         }
 
         private Vector3 FollowingPosition()

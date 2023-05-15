@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using Plugins.MonoCache;
 using Services.Inputs;
 using Services.ServiceLocator;
 using UnityEngine;
@@ -6,11 +7,9 @@ using UnityEngine;
 namespace PlayerLogic
 {
     [RequireComponent(typeof(CharacterController))]
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoCache
     {
         [SerializeField] private float _speed;
-
-        private bool _isAlive;
         
         private CharacterController _controller;
         private IInputService _inputService;
@@ -24,32 +23,14 @@ namespace PlayerLogic
             _inputService = ServiceRouter.Container.Single<IInputService>();
         }
 
-        private void Start()
-        {
-            if (_controller != null)
-                Run();
-        }
-
-        private void OnEnable()
-        {
-            _isAlive = true;
+        protected override void OnEnabled() => 
             _inputService.OnMoveControls();
-        }
 
-        private void OnDisable()
-        {
-            _isAlive = false;
+        protected override void OnDisabled() => 
             _inputService.OffMoveControls();
-        }
 
-        private async void Run()
-        {
-            while (_isAlive)
-            {
-                BaseLogic();
-                await UniTask.Yield(PlayerLoopTiming.Update);
-            }
-        }
+        protected override void UpdateCached() => 
+            BaseLogic();
 
         private void BaseLogic()
         {

@@ -1,9 +1,10 @@
 using Cysharp.Threading.Tasks;
+using Plugins.MonoCache;
 using UnityEngine;
 
 namespace Infrastructure.LoadingLogic.ScreenLoading
 {
-    public class LoadingCurtain : MonoBehaviour
+    public class LoadingCurtain : MonoCache
     {
         [SerializeField] private CanvasGroup _curtain;
 

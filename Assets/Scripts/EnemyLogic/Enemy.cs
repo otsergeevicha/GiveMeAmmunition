@@ -1,11 +1,12 @@
 ﻿using EnemyLogic.AI;
+using Plugins.MonoCache;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace EnemyLogic
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoCache
     {
         [SerializeField] private Transform _target;
 
