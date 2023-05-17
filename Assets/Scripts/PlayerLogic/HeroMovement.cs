@@ -15,16 +15,15 @@ namespace PlayerLogic
         private Camera _camera;
         private Animator _animator;
 
+        private Animation _animation;
+
         private void Awake()
         {
-            _controller = GetComponent<CharacterController>();
+            _controller = Get<CharacterController>();
             _inputService = ServiceRouter.Container.Single<IInputService>();
             _camera = Camera.main;
-            _animator = ChildrenGet<Animator>();
+            _animator = Get<Animator>();
         }
-
-        protected override void OnEnabled() =>
-            _inputService.OnMoveControls();
 
         protected override void OnDisabled() =>
             _inputService.OffMoveControls();
@@ -32,14 +31,17 @@ namespace PlayerLogic
         protected override void UpdateCached() =>
             BaseLogic();
 
+        private void OnAnimEnded() => 
+            _inputService.OnMoveControls();
+
         private void BaseLogic()
         {
             Vector3 movementVector = Vector3.zero;
 
             if (_inputService.Axis.sqrMagnitude > Constants.Epsilon)
             {
-                _animator.SetBool(Constants.WalkHash, true);
-                
+                _animator.SetBool(IsLoadedCargo ? Constants.WalkHash : Constants.RollHash, true);
+
                 movementVector = _camera.transform.TransformDirection(_inputService.Axis);
                 movementVector.y = 0;
                 movementVector.Normalize();
@@ -47,7 +49,7 @@ namespace PlayerLogic
                 transform.forward = movementVector;
             }
             else
-                _animator.SetBool(Constants.WalkHash, false);
+                _animator.SetBool(IsLoadedCargo ? Constants.WalkHash : Constants.RollHash, false);
 
             movementVector += Physics.gravity;
 
