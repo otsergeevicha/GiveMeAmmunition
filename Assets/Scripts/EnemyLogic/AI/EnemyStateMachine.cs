@@ -36,9 +36,9 @@ namespace EnemyLogic.AI
         {
             _states = new Dictionary<Type, ISwitcherState>
             {
-                [typeof(MovementState)] = new MovementState(_agent, _target),
-                [typeof(IdleState)] = new IdleState(),
-                [typeof(AttackState)] = new AttackState()
+                [typeof(EnemyMovementState)] = new EnemyMovementState(_agent, _target),
+                [typeof(EnemyIdleState)] = new EnemyIdleState(),
+                [typeof(EnemyAttackState)] = new EnemyAttackState()
             };
         }
 
@@ -53,8 +53,8 @@ namespace EnemyLogic.AI
 
         private void FirstEnterState()
         {
-            _currentState = _states[typeof(IdleState)];
-            EnterState<IdleState>();
+            _currentState = _states[typeof(EnemyIdleState)];
+            EnterState<EnemyIdleState>();
         }
     }
 }

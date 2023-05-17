@@ -3,13 +3,13 @@ using UnityEngine.AI;
 
 namespace EnemyLogic.AI.States
 {
-    public class MovementState : State
+    public class EnemyMovementState : State
     {
         private NavMeshAgent _agent;
         private Transform _target;
         private Collider _trigger;
 
-        public MovementState(NavMeshAgent agent, Transform target)
+        public EnemyMovementState(NavMeshAgent agent, Transform target)
         {
             _agent = agent;
             _target = target;

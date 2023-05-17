@@ -1,6 +1,6 @@
 ﻿namespace EnemyLogic.AI.States
 {
-    public class AttackState : State
+    public class EnemyAttackState : State
     {
         public override void Enable() {}
 
