@@ -25,11 +25,11 @@ namespace PlayerLogic
             _animator = Get<Animator>();
         }
 
-        protected override void OnDisabled() =>
-            _inputService.OffMoveControls();
-
         protected override void UpdateCached() =>
             BaseLogic();
+
+        protected override void OnDisabled() =>
+            _inputService.OffMoveControls();
 
         private void OnAnimEnded() => 
             _inputService.OnMoveControls();
@@ -40,7 +40,9 @@ namespace PlayerLogic
 
             if (_inputService.Axis.sqrMagnitude > Constants.Epsilon)
             {
-                _animator.SetBool(IsLoadedCargo ? Constants.WalkHash : Constants.RollHash, true);
+                _animator.SetBool(IsLoadedCargo 
+                    ? Constants.HeroWalkHash 
+                    : Constants.HeroRollHash, true);
 
                 movementVector = _camera.transform.TransformDirection(_inputService.Axis);
                 movementVector.y = 0;
@@ -49,7 +51,9 @@ namespace PlayerLogic
                 transform.forward = movementVector;
             }
             else
-                _animator.SetBool(IsLoadedCargo ? Constants.WalkHash : Constants.RollHash, false);
+                _animator.SetBool(IsLoadedCargo 
+                    ? Constants.HeroWalkHash 
+                    : Constants.HeroRollHash, false);
 
             movementVector += Physics.gravity;
 

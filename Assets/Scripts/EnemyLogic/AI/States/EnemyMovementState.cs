@@ -7,26 +7,25 @@ namespace EnemyLogic.AI.States
     {
         private NavMeshAgent _agent;
         private Transform _target;
-        private Collider _trigger;
+        private Animator _animator;
 
-        public EnemyMovementState(NavMeshAgent agent, Transform target)
+        public EnemyMovementState(NavMeshAgent agent, Transform target, Animator animator)
         {
             _agent = agent;
             _target = target;
+            _animator = animator;
         }
 
-        public override void Enable() => 
-            Move();
-
-        public override void Disable() {}
-
-        private void Move()
+        public override void Enable()
         {
-            if (PurposeNotReached())
-                _agent.SetDestination(_target.position);
+            _animator.SetBool(Constants.EnemyWalkHash, true);
+            _agent.SetDestination(_target.position);
         }
 
-        private bool PurposeNotReached() =>
-            Vector3.Distance(_agent.transform.position, _target.position) >= Constants.MinDistanceToTarget;
+        public override void Disable()
+        {
+            _animator.SetBool(Constants.EnemyWalkHash, false);
+            _agent.isStopped = true;
+        }
     }
 }

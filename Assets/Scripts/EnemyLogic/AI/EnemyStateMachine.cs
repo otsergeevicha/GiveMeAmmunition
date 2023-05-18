@@ -10,20 +10,28 @@ namespace EnemyLogic.AI
     {
         private Dictionary<Type, ISwitcherState> _states;
         private ISwitcherState _currentState;
-        
+
         private NavMeshAgent _agent;
         private Transform _target;
+        private Animator _animator;
+        private int _damage;
+        private Transform _transform;
+        private State _state;
 
-        public EnemyStateMachine(NavMeshAgent agent, Transform target)
+        public EnemyStateMachine(NavMeshAgent agent, Transform target, Animator animator, int damage,
+            Transform transform)
         {
+            _transform = transform;
+            _damage = damage;
             _target = target;
             _agent = agent;
+            _animator = animator;
             
             InitializeStates();
             GeneralDependencyInjections();
             FirstEnterState();
         }
-    
+
         public void EnterState<TState>() where TState : ISwitcherState
         {
             var state = _states[typeof(TState)];
@@ -36,9 +44,10 @@ namespace EnemyLogic.AI
         {
             _states = new Dictionary<Type, ISwitcherState>
             {
-                [typeof(EnemyMovementState)] = new EnemyMovementState(_agent, _target),
-                [typeof(EnemyIdleState)] = new EnemyIdleState(),
-                [typeof(EnemyAttackState)] = new EnemyAttackState()
+                [typeof(EnemyIdleState)] = new EnemyIdleState(_animator),
+                [typeof(EnemyMovementState)] = new EnemyMovementState(_agent, _target, _animator),
+                [typeof(EnemyAttackState)] = new EnemyAttackState(_target, _animator, _damage, _transform),
+                [typeof(EnemyHitState)] = new EnemyHitState(_animator)
             };
         }
 
