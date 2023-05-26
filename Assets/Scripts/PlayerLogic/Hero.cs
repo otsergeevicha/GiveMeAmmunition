@@ -1,4 +1,4 @@
-﻿using EnemyLogic.AI.States;
+﻿using System;
 using Plugins.MonoCache;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace PlayerLogic
         
         public void TakeDamage(int damage)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
