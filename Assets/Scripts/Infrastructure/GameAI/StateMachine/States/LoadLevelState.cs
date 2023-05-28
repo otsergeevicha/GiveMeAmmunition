@@ -1,9 +1,9 @@
 ﻿using CameraLogic;
 using Infrastructure.LoadingLogic;
 using Infrastructure.LoadingLogic.ScreenLoading;
+using PlayerLogic;
 using Services.Factory;
 using Services.StateMachine;
-using UnityEngine;
 
 namespace Infrastructure.GameAI.StateMachine.States
 {
@@ -13,8 +13,9 @@ namespace Infrastructure.GameAI.StateMachine.States
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _loadingCurtain;
         private readonly IGameFactory _gameFactory;
-        
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IGameFactory gameFactory)
+
+        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
+            IGameFactory gameFactory)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
@@ -28,20 +29,21 @@ namespace Infrastructure.GameAI.StateMachine.States
             _sceneLoader.LoadScene(sceneName, OnLoaded);
         }
 
-        public void Exit() => 
+        public void Exit() =>
             _loadingCurtain.Hide();
 
         private void OnLoaded()
         {
-            GameObject player = _gameFactory.CreateHero();
-            _gameFactory.CreateGud();
-            
-            CameraFollow(player);
-            
+            Hero hero = _gameFactory.CreateHero();
+            _gameFactory.CreateHud();
+            CameraFollow camera = _gameFactory.CreateCamera();
+
+            CameraFollowing(camera, hero);
+
             _stateMachine.Enter<GameLoopState>();
         }
 
-        private void CameraFollow(GameObject player) => 
-            Camera.main.GetComponent<CameraFollow>().Follow(player);
+        private void CameraFollowing(CameraFollow camera, Hero hero) =>
+            camera.InitFollowing(hero.ChildrenGet<RootCamera>().transform);
     }
 }

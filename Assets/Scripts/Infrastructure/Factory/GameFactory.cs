@@ -1,6 +1,7 @@
-﻿using Services.Assets;
+﻿using CameraLogic;
+using PlayerLogic;
+using Services.Assets;
 using Services.Factory;
-using UnityEngine;
 
 namespace Infrastructure.Factory
 {
@@ -8,15 +9,18 @@ namespace Infrastructure.Factory
     {
         private readonly IAssetsProvider _assetsProvider;
 
-        public GameFactory(IAssetsProvider assetsProvider)
-        {
+        public GameFactory(IAssetsProvider assetsProvider) => 
             _assetsProvider = assetsProvider;
-        }
 
-        public GameObject CreateHero() => 
-            _assetsProvider.InstantiateEntity(Constants.PlayerPath);
+        public Hero CreateHero() => 
+            _assetsProvider.InstantiateEntity(Constants.PlayerPath)
+                .GetComponent<Hero>();
 
-        public void CreateGud() => 
+        public void CreateHud() => 
             _assetsProvider.InstantiateEntity(Constants.HudPath);
+        
+        public CameraFollow CreateCamera() => 
+            _assetsProvider.InstantiateEntity(Constants.CameraPath)
+                .GetComponent<CameraFollow>();
     }
 }

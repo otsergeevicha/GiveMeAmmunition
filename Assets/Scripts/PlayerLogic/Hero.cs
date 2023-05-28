@@ -1,5 +1,4 @@
-﻿using System;
-using Plugins.MonoCache;
+﻿using Plugins.MonoCache;
 using UnityEngine;
 
 namespace PlayerLogic
@@ -9,9 +8,6 @@ namespace PlayerLogic
     {
         protected bool IsLoadedCargo;
         
-        public void TakeDamage(int damage)
-        {
-            throw new NotImplementedException();
-        }
+        public void TakeDamage(int damage) {}
     }
 }

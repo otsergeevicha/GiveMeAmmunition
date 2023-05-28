@@ -4,15 +4,21 @@ namespace Services.Inputs
 {
     public class InputService : IInputService
     {
-        private readonly CustomPlayerInput _playerInput = new ();
-        
+        private readonly MapInputs _input = new ();
+
+        public bool IsCurrentDevice() => 
+            _input.KeyboardMouseScheme.name == Constants.KeyboardMouse;
+
+        public Vector2 MoveAxis => 
+            _input.Player.Move.ReadValue<Vector2>();
+
+        public Vector2 LookAxis => 
+            _input.Player.Look.ReadValue<Vector2>();
+
         public void OnMoveControls() => 
-            _playerInput.Player.Move.Enable();
+            _input.Player.Enable();
 
         public void OffMoveControls() =>
-            _playerInput.Player.Move.Disable();
-
-        public Vector2 Axis => 
-            _playerInput.Player.Move.ReadValue<Vector2>();
+            _input.Player.Disable();
     }
-}  
+}
