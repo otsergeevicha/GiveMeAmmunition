@@ -11,9 +11,10 @@ namespace CameraLogic
     {
         [SerializeField] private CinemachineVirtualCamera _cameraFollow;
         [SerializeField] private CinemachineVirtualCamera _zoomFollow;
+
+        [SerializeField] private Camera _camera;
         
-        private bool _cursorLocked;
-        
+        private readonly bool _cursorLocked = true;
         private readonly float _topClamp = 70.0f;
         private readonly float _bottomClamp = -30.0f;
         private readonly float _cameraAngleOverride = 0.0f;
@@ -22,8 +23,6 @@ namespace CameraLogic
         private float _sensitivity = 1f;
         private Transform _following;
         
-        private float _rotationSmoothTime = 0.12f;
-        private float _targetRotation = 0.0f;
         private float _rotationVelocity;
         
         private bool _isRotate = true;
@@ -41,6 +40,9 @@ namespace CameraLogic
         protected override void LateUpdateCached() => 
             CameraRotation();
 
+        public Camera GetCameraMain() =>
+            _camera;
+        
         public void InitFollowing(Transform following)
         {
             _following = following;

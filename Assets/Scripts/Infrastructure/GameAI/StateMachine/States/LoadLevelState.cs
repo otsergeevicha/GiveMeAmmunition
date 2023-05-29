@@ -34,13 +34,22 @@ namespace Infrastructure.GameAI.StateMachine.States
 
         private void OnLoaded()
         {
+            _gameFactory.CreateLight();
             Hero hero = _gameFactory.CreateHero();
             _gameFactory.CreateHud();
             CameraFollow camera = _gameFactory.CreateCamera();
-
             CameraFollowing(camera, hero);
 
+            Pool pool = _gameFactory.CreatePool();
+            InjectPool(hero, pool, camera);
+
             _stateMachine.Enter<GameLoopState>();
+        }
+
+        private void InjectPool(Hero hero, Pool pool, CameraFollow camera)
+        {
+            hero.ChildrenGet<GrenadeAbility>().InjectPool(pool);
+            hero.ChildrenGet<FirearmsAbility>().Inject(pool, camera);
         }
 
         private void CameraFollowing(CameraFollow camera, Hero hero) =>

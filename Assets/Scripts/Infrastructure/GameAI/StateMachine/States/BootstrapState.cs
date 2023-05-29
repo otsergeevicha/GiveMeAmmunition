@@ -24,19 +24,13 @@ namespace Infrastructure.GameAI.StateMachine.States
             RegisterServices();
         }
 
-        public void Enter()
-        {
+        public void Enter() => 
             _sceneLoader.LoadScene(Constants.InitialScene, EnterLoadLevel);
-        }
 
-        private void EnterLoadLevel()
-        {
-            _stateMachine.Enter<LoadLevelState, string>("Main");
-        }
+        private void EnterLoadLevel() => 
+            _stateMachine.Enter<LoadLevelState, string>(Constants.MainScene);
 
-        public void Exit()
-        {
-        }
+        public void Exit() {}
 
         private void RegisterServices()
         {

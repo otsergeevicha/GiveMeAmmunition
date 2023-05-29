@@ -19,7 +19,7 @@ namespace EnemyLogic
         {
             _agent = Get<NavMeshAgent>();
             _animator = Get<Animator>();
-            _damage = Constants.DamageEnemy;
+            _damage = Constants.EnemyDamage;
         }
 
         public void TakeDamage(int damage)

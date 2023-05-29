@@ -7,8 +7,8 @@ namespace Services.Inputs
     {
         Vector2 MoveAxis { get; }
         Vector2 LookAxis { get; }
-        void OnMoveControls();
-        void OffMoveControls();
+        void OnControls();
+        void OffControls();
         bool IsCurrentDevice();
     }
 }

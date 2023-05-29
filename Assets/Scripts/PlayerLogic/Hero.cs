@@ -7,7 +7,7 @@ namespace PlayerLogic
     public class Hero : MonoCache, IHealth
     {
         protected bool IsLoadedCargo;
-        
+
         public void TakeDamage(int damage) {}
     }
 }

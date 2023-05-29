@@ -15,10 +15,10 @@ namespace Services.Inputs
         public Vector2 LookAxis => 
             _input.Player.Look.ReadValue<Vector2>();
 
-        public void OnMoveControls() => 
+        public void OnControls() => 
             _input.Player.Enable();
 
-        public void OffMoveControls() =>
+        public void OffControls() =>
             _input.Player.Disable();
     }
 }

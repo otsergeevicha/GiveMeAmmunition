@@ -267,7 +267,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648593513702758458}
-  m_LocalRotation: {x: 0.25882152, y: -0, z: 0, w: -0.96592516}
+  m_LocalRotation: {x: 0.9659266, y: -0, z: 0, w: -0.2588164}
   m_LocalPosition: {x: 1.55, y: 3.0964103, z: -1.9650633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraFollow: {fileID: 1648593512498938473}
   _zoomFollow: {fileID: 1648593512261996202}
+  _camera: {fileID: 1648593513702758452}
 --- !u!1 &1648593513723481513
 GameObject:
   m_ObjectHideFlags: 0

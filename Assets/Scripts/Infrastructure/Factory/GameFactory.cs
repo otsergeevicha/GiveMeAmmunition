@@ -22,5 +22,18 @@ namespace Infrastructure.Factory
         public CameraFollow CreateCamera() => 
             _assetsProvider.InstantiateEntity(Constants.CameraPath)
                 .GetComponent<CameraFollow>();
+
+        public void CreateLight() =>
+            _assetsProvider.InstantiateEntity(Constants.LightPath);
+
+        public Pool CreatePool() =>
+            _assetsProvider.InstantiateEntity(Constants.PoolPath)
+                .GetComponent<Pool>();
+
+        public Grenade CreateGrenade() =>
+            _assetsProvider.InstantiateEntity(Constants.GrenadePath).GetComponent<Grenade>();
+        
+        public Bullet CreateBullet() =>
+            _assetsProvider.InstantiateEntity(Constants.BulletPath).GetComponent<Bullet>();
     }
 }

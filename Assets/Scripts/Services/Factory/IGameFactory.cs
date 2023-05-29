@@ -9,5 +9,9 @@ namespace Services.Factory
         Hero CreateHero();
         void CreateHud();
         CameraFollow CreateCamera();
+        void CreateLight();
+        Pool CreatePool();
+        Grenade CreateGrenade();
+        Bullet CreateBullet();
     }
 }

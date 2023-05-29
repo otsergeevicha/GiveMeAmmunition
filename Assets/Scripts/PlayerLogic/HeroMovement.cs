@@ -25,10 +25,10 @@ namespace PlayerLogic
             BaseLogic();
 
         protected override void OnDisabled() =>
-            _input.OffMoveControls();
+            _input.OffControls();
 
         private void OnAnimEnded() => 
-            _input.OnMoveControls();
+            _input.OnControls();
 
         private void BaseLogic()
         {
