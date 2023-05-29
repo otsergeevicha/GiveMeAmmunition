@@ -1,4 +1,6 @@
 ﻿using Plugins.MonoCache;
+using Services.Inputs;
+using Services.ServiceLocator;
 using UnityEngine;
 
 enum IndexAbility
@@ -12,6 +14,11 @@ enum IndexAbility
 public class AbilitySelector : MonoCache
 {
     [SerializeField] private Ability[] _abilities;
+    
+    private IInputService _input;
+
+    protected override void OnEnabled() => 
+        _input = ServiceRouter.Container.Single<IInputService>();
 
     public void SelectAbility(int selectIndexAbility)
     {

@@ -7,7 +7,7 @@ public class FirearmsAbility : Ability
     [SerializeField] private Transform _spawnPointBullet;
 
     private Pool _pool;
-    private CameraFollow _camera;
+    private Camera _camera;
 
     public override int GetIndexAbility() =>
         (int)IndexAbility.Firearms;
@@ -15,13 +15,13 @@ public class FirearmsAbility : Ability
     public void Inject(Pool pool, CameraFollow cameraFollow)
     {
         _pool = pool;
-        _camera = cameraFollow;
+        _camera = cameraFollow.GetCameraMain();
     }
 
     public override void Cast()
     {
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        Ray ray = _camera.GetCameraMain().ScreenPointToRay(screenCenterPoint);
+        Ray ray = _camera.ScreenPointToRay(screenCenterPoint);
 
         if (Physics.Raycast(ray, out RaycastHit raycastHit)) 
             ImitationQueue(Constants.AutomaticQueue, raycastHit.point);
