@@ -1,5 +1,6 @@
 ﻿using System;
 using CameraLogic;
+using Infrastructure;
 using Services.Inputs;
 using Services.ServiceLocator;
 using UnityEngine;
@@ -14,8 +15,6 @@ namespace PlayerLogic
         private IInputService _input;
         private Animator _animator;
         private float _rotationVelocity;
-        private readonly float _rotationSmoothTime = 0.12f;
-        private bool _isRotate = true;
 
         private void Awake()
         {
