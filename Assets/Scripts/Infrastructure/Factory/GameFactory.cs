@@ -31,9 +31,11 @@ namespace Infrastructure.Factory
                 .GetComponent<Pool>();
 
         public Grenade CreateGrenade() =>
-            _assetsProvider.InstantiateEntity(Constants.GrenadePath).GetComponent<Grenade>();
+            _assetsProvider.InstantiateEntity(Constants.GrenadePath)
+                .GetComponent<Grenade>();
         
         public Bullet CreateBullet() =>
-            _assetsProvider.InstantiateEntity(Constants.BulletPath).GetComponent<Bullet>();
+            _assetsProvider.InstantiateEntity(Constants.BulletPath)
+                .GetComponent<Bullet>();
     }
 }

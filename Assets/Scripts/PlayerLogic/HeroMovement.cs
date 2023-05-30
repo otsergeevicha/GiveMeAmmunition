@@ -13,6 +13,9 @@ namespace PlayerLogic
         private CharacterController _controller;
         private IInputService _input;
         private Animator _animator;
+        private float _rotationVelocity;
+        private readonly float _rotationSmoothTime = 0.12f;
+        private bool _isRotate = true;
 
         private void Awake()
         {
@@ -48,7 +51,7 @@ namespace PlayerLogic
                 _animator.SetBool(IsLoadedCargo 
                     ? Constants.HeroWalkHash 
                     : Constants.HeroRollHash, false);
-            
+
             movementVector += Physics.gravity;
             
             _controller.Move(movementVector * (Constants.HeroSpeed * Time.deltaTime));

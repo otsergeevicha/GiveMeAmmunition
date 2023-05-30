@@ -4,6 +4,8 @@ using Plugins.MonoCache;
 using Services.Inputs;
 using Services.ServiceLocator;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 namespace CameraLogic
 {
@@ -13,49 +15,63 @@ namespace CameraLogic
         [SerializeField] private CinemachineVirtualCamera _zoomFollow;
 
         [SerializeField] private Camera _camera;
-        
+
         private readonly bool _cursorLocked = true;
         private readonly float _topClamp = 70.0f;
         private readonly float _bottomClamp = -30.0f;
         private readonly float _cameraAngleOverride = 0.0f;
-        
+
         private IInputService _input;
         private float _sensitivity = 1f;
         private Transform _following;
-        
+
         private float _rotationVelocity;
-        
-        private bool _isRotate = true;
+
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
+        private bool _zoom;
 
         private void Awake()
         {
             _zoomFollow.gameObject.SetActive(false);
             _input = ServiceRouter.Container.Single<IInputService>();
-            
+
             SetCursorState(_cursorLocked);
+            _input.PushZoom(OnZoom);
         }
 
-        protected override void LateUpdateCached() => 
+        protected override void LateUpdateCached() =>
             CameraRotation();
 
         public Camera GetCameraMain() =>
             _camera;
-        
+
         public void InitFollowing(Transform following)
         {
             _following = following;
-            
+
             _cameraFollow.Follow = following;
             _zoomFollow.Follow = following;
         }
 
-        public void SetSensitivity(float sensitivity) => 
+        public void SetSensitivity(float sensitivity) =>
             _sensitivity = sensitivity;
 
-        public void SetRotateOnMove(bool isRotate) => 
-            _isRotate = isRotate;
+        private void OnZoom()
+        {
+            if (_zoom)
+            {
+                _zoomFollow.gameObject.SetActive(false);
+                _cameraFollow.gameObject.SetActive(true);
+                _zoom = false;
+            }
+            else
+            {
+                _zoomFollow.gameObject.SetActive(true);
+                _cameraFollow.gameObject.SetActive(false);
+                _zoom = true;
+            }
+        }
 
         private void CameraRotation()
         {
@@ -76,16 +92,16 @@ namespace CameraLogic
 
         private float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
-            if (lfAngle < -360f) 
+            if (lfAngle < -360f)
                 lfAngle += 360f;
-            if (lfAngle > 360f) 
+            if (lfAngle > 360f)
                 lfAngle -= 360f;
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
-        
-        private void SetCursorState(bool newState) => 
-            Cursor.lockState = newState 
-                ? CursorLockMode.Locked 
+
+        private void SetCursorState(bool newState) =>
+            Cursor.lockState = newState
+                ? CursorLockMode.Locked
                 : CursorLockMode.None;
     }
 }
