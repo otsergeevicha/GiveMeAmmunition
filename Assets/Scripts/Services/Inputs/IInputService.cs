@@ -7,6 +7,8 @@ namespace Services.Inputs
     public interface IInputService : IService
     {
         Vector2 MoveAxis { get; }
+        void OnMove(Action onMove);
+        void OffMove(Action onMove);
         Vector2 LookAxis { get; }
         void PushZoom(Action onZoom);
         void PushShoot(Action onShoot);

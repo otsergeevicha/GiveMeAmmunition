@@ -11,6 +11,14 @@ namespace Services.Inputs
         public Vector2 MoveAxis => 
             _input.Player.Move.ReadValue<Vector2>();
 
+        public void OnMove(Action onMove) =>
+            _input.Player.Move.performed += _ =>
+                onMove?.Invoke();
+        
+        public void OffMove(Action onMove) =>
+            _input.Player.Move.canceled += _ =>
+                onMove?.Invoke();
+
         public Vector2 LookAxis => 
             _input.Player.Look.ReadValue<Vector2>();
         

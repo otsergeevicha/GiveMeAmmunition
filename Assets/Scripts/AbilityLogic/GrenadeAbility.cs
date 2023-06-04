@@ -1,5 +1,4 @@
 ﻿using System;
-using Ammo;
 using Ammo.Ammunition;
 using Ammo.Pools;
 using Infrastructure;
@@ -33,6 +32,8 @@ namespace AbilityLogic
             Vector3 fromTo = _direction - transform.position;
             Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
 
+            transform.rotation = Quaternion.LookRotation(fromToXZ, Vector3.up);
+            
             _axisX = fromToXZ.magnitude;
             _axisY = fromTo.y;
 

@@ -1,4 +1,5 @@
 ﻿using AbilityLogic;
+using Ammo;
 using Ammo.Pools;
 using CameraLogic;
 using Infrastructure.LoadingLogic;
@@ -50,8 +51,9 @@ namespace Infrastructure.GameAI.StateMachine.States
 
         private void InjectPool(Hero hero, Pool pool, CameraFollow camera)
         {
-            hero.ChildrenGet<GrenadeAbility>().InjectPool(pool);
+            hero.ChildrenGet<WeaponContainer>().Inject(camera);
             hero.ChildrenGet<FirearmsAbility>().Inject(pool, camera);
+            hero.ChildrenGet<GrenadeAbility>().InjectPool(pool);
         }
 
         private void CameraFollowing(CameraFollow camera, Hero hero) =>

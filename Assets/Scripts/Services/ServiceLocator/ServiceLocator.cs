@@ -1,10 +1,10 @@
 ﻿namespace Services.ServiceLocator
 {
-    public class ServiceRouter
+    public class ServiceLocator
     {
-        private static ServiceRouter _instance;
-        public static ServiceRouter Container => 
-            _instance ??= new ServiceRouter();
+        private static ServiceLocator _instance;
+        public static ServiceLocator Container => 
+            _instance ??= new ServiceLocator();
 
         public void RegisterSingle<TService>(TService implementation) where TService : IService => 
             Implementation<TService>.ServiceInstance = implementation;

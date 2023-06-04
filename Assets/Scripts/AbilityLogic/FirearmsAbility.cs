@@ -1,4 +1,5 @@
-﻿using Ammo.Pools;
+﻿using Ammo.FirearmsGun;
+using Ammo.Pools;
 using CameraLogic;
 using Cysharp.Threading.Tasks;
 using Infrastructure;
@@ -8,7 +9,7 @@ namespace AbilityLogic
 {
     public class FirearmsAbility : Ability
     {
-        [SerializeField] private Transform _spawnPointBullet;
+        [SerializeField] private Firearms _firearms;
 
         private Pool _pool;
         private Camera _camera;
@@ -35,7 +36,7 @@ namespace AbilityLogic
         {
             while (automaticQueue != 0)
             {
-                _pool.TryGetBullet().Shot(_spawnPointBullet.position, mouseWorldPosition);
+                _pool.TryGetBullet().Shot(_firearms.GetSpawnPoint((int)TypeGun.OneGun), mouseWorldPosition);
                 automaticQueue--;
 
                 await UniTask.Delay(Constants.DelayShots);

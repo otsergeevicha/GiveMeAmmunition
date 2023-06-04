@@ -32,7 +32,7 @@ namespace CameraLogic
         private void Awake()
         {
             _zoomFollow.gameObject.SetActive(false);
-            _input = ServiceRouter.Container.Single<IInputService>();
+            _input = ServiceLocator.Container.Single<IInputService>();
 
             SetCursorState(_cursorLocked);
             _input.PushZoom(OnZoom);

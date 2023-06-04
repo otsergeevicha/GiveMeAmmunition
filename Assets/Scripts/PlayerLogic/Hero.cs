@@ -10,5 +10,8 @@ namespace PlayerLogic
         protected bool IsLoadedCargo;
 
         public void TakeDamage(int damage) {}
+
+        public bool IsLoaded() => 
+            IsLoadedCargo;
     }
 }

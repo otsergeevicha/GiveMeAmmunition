@@ -20,7 +20,7 @@ namespace AbilityLogic
         private IInputService _input;
 
         protected override void OnEnabled() => 
-            _input = ServiceRouter.Container.Single<IInputService>();
+            _input = ServiceLocator.Container.Single<IInputService>();
 
         private void Start()
         {

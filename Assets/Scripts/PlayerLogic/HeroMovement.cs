@@ -19,7 +19,7 @@ namespace PlayerLogic
         private void Awake()
         {
             _controller = Get<CharacterController>();
-            _input = ServiceRouter.Container.Single<IInputService>();
+            _input = ServiceLocator.Container.Single<IInputService>();
             _animator = Get<Animator>();
         }
 

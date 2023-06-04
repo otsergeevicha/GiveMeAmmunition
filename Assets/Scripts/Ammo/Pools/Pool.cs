@@ -13,7 +13,7 @@ namespace Ammo.Pools
 
         private void Awake()
         {
-            IGameFactory factory = ServiceRouter.Container.Single<IGameFactory>();
+            IGameFactory factory = ServiceLocator.Container.Single<IGameFactory>();
 
             _grenadePool = new GrenadePool(factory);
             _bulletPool = new BulletPool(factory);
