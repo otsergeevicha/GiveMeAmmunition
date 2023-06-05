@@ -19,6 +19,9 @@ namespace Infrastructure
         public const float ForceExplosion = 500f;
         public const float AngleInDegrees = 45f;
         public const int GrenadeDamage = 50;
+        
+        //shield
+        public const int TimeLifeShield = 5000;
     
         //bullet
         public const int BulletDamage = 50;
@@ -45,7 +48,7 @@ namespace Infrastructure
     
         //check device
         public const string KeyboardMouse = "KeyboardMouse";
-    
+
         //animator
         public static readonly int HeroWalkHash = Animator.StringToHash("Walk");
         public static readonly int HeroRollHash = Animator.StringToHash("Roll");

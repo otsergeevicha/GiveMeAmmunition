@@ -35,7 +35,7 @@ namespace AbilityLogic
             _camera.ScreenPointToRay(GetCenter());
 
         private Vector2 GetCenter() => 
-            new Vector2(Screen.width / 2f, Screen.height / 2f);
+            new (Screen.width / 2f, Screen.height / 2f);
 
         private async void ImitationQueue(int automaticQueue, Vector3 mouseWorldPosition)
         {
