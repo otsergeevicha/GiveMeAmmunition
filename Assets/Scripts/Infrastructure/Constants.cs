@@ -26,7 +26,7 @@ namespace Infrastructure
 
         //pool
         public const int CountSpawnGrenade = 20;
-        public const int CountSpawnBullets = 60;
+        public const int CountSpawnBullets = 90;
     
         //curtain
         public const int RateCurtain = 3;

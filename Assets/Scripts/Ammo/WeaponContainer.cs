@@ -27,10 +27,15 @@ namespace Ammo
             _input.OffMove(OffMove);
         }
 
-        private void Update()
+        protected override void UpdateCached() => 
+            FollowingAmmo();
+
+        public void Inject(CameraFollow cameraFollow) =>
+            _camera = cameraFollow.GetCameraMain();
+
+        private void FollowingAmmo()
         {
-            Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
-            Ray ray = _camera.ScreenPointToRay(screenCenterPoint);
+            Ray ray = SendRay();
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
@@ -40,8 +45,11 @@ namespace Ammo
             }
         }
 
-        public void Inject(CameraFollow cameraFollow) =>
-            _camera = cameraFollow.GetCameraMain();
+        private Ray SendRay() => 
+            _camera.ScreenPointToRay(GetCenter());
+
+        private Vector2 GetCenter() => 
+            new (Screen.width / 2f, Screen.height / 2f);
 
         private void OnMove() =>
             gameObject.SetActive(_hero.IsLoaded());

@@ -5,6 +5,7 @@ using UnityEngine;
 namespace PlayerLogic
 {
     [RequireComponent(typeof(HeroMovement))]
+    [RequireComponent(typeof(HeroShooting))]
     public class Hero : MonoCache, IHealth
     {
         protected bool IsLoadedCargo;
