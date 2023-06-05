@@ -1728,7 +1728,7 @@ Transform:
   m_Children:
   - {fileID: 411439937703706361}
   m_Father: {fileID: 5321067570574137898}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!33 &5191521970244055999
 MeshFilter:
@@ -3142,13 +3142,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3625944619968789692}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0020000096, z: 0.037699997}
-  m_LocalScale: {x: 0.004999997, y: 0.024999999, z: 0.024999999}
+  m_LocalScale: {x: 0.004999996, y: 0.024999999, z: 0.025000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5321067570574137898}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3708096924802389118
 GameObject:
@@ -7060,6 +7060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPointBullet: {fileID: 4623999547295218620}
+  _vfxFlamethrower: {fileID: 428734, guid: 066053404d559854a8850fd56b0c728e, type: 3}
 --- !u!1 &8608932109699912771
 GameObject:
   m_ObjectHideFlags: 0
@@ -7441,8 +7442,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4193926533450101312}
   - {fileID: 6890105074119099864}
+  - {fileID: 4193926533450101312}
   m_Father: {fileID: 4718832931701067514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

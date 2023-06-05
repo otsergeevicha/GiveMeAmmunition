@@ -12,6 +12,7 @@ namespace Services.Inputs
         Vector2 LookAxis { get; }
         void PushZoom(Action onZoom);
         void PushShoot(Action onShoot);
+        void OffShoot(Action offShoot);
         void PushGrenade(Action onGrenade);
         void PushFirearms(Action onFirearms);
         void PushFlamethrower(Action onFlamethrower);

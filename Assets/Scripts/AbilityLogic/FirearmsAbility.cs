@@ -25,12 +25,17 @@ namespace AbilityLogic
 
         public override void Cast()
         {
-            Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
-            Ray ray = _camera.ScreenPointToRay(screenCenterPoint);
+            Ray ray = SendRay();
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
                 ImitationQueue(Constants.AutomaticQueue, raycastHit.point);
         }
+
+        private Ray SendRay() => 
+            _camera.ScreenPointToRay(GetCenter());
+
+        private Vector2 GetCenter() => 
+            new Vector2(Screen.width / 2f, Screen.height / 2f);
 
         private async void ImitationQueue(int automaticQueue, Vector3 mouseWorldPosition)
         {

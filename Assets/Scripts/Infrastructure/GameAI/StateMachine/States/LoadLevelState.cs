@@ -53,7 +53,8 @@ namespace Infrastructure.GameAI.StateMachine.States
         {
             hero.ChildrenGet<WeaponContainer>().Inject(camera);
             hero.ChildrenGet<FirearmsAbility>().Inject(pool, camera);
-            hero.ChildrenGet<GrenadeAbility>().InjectPool(pool);
+            hero.ChildrenGet<FlamethrowerAbility>().Inject(camera);
+            hero.ChildrenGet<GrenadeAbility>().InjectPool(pool, camera);
         }
 
         private void CameraFollowing(CameraFollow camera, Hero hero) =>

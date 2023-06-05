@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Ammo.Ammunition
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class Grenade : MonoCache
     {
         [SerializeField] private Transform _explosionEffect;

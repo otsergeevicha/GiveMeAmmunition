@@ -29,6 +29,10 @@ namespace Services.Inputs
         public void PushShoot(Action onShoot) => 
             _input.Player.Shoot.performed += _ =>
                 onShoot?.Invoke();
+        
+        public void OffShoot(Action offShoot) => 
+            _input.Player.Shoot.canceled += _ =>
+                offShoot?.Invoke();
 
         public void PushGrenade(Action onGrenade) => 
             _input.Player.Grenade.performed += _ =>
