@@ -11,9 +11,13 @@ namespace Infrastructure
         public const int EnemyDamage = 10;
     
         //Firearms
-        public const int AutomaticQueue = 3;
+        public const int AutomaticQueue = 10;
         public const int DelayShots = 100;
-    
+        
+        //turret
+        public const int AutomaticQueueTurret = 100;
+        public const int DelayShotsTurret = 1500;
+
         //grenade
         public const float RadiusExplosion = 10f;
         public const float ForceExplosion = 500f;
@@ -43,6 +47,8 @@ namespace Infrastructure
         public const string CameraPath = "Camera/MainCamera";
         public const string LightPath = "View/Light";
         public const string PoolPath = "Ammo/Pool";
+        public const string TurretPath = "Turrets/Turret";
+        public const string TurretPointsPath = "Turrets/TurretPoints";
         public const string GrenadePath = "Ammo/Grenade";
         public const string BulletPath = "Ammo/Bullet";
     

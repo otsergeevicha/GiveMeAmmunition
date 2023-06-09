@@ -23,29 +23,26 @@ namespace AbilityLogic
             _camera = cameraFollow.GetCameraMain();
         }
 
-        public override void Cast()
-        {
-            Ray ray = SendRay();
+        public override void Cast() => 
+            ImitationQueue(Constants.AutomaticQueue);
 
-            if (Physics.Raycast(ray, out RaycastHit raycastHit))
-                ImitationQueue(Constants.AutomaticQueue, raycastHit.point);
-        }
-
-        private Ray SendRay() => 
-            _camera.ScreenPointToRay(GetCenter());
-
-        private Vector2 GetCenter() => 
-            new (Screen.width / 2f, Screen.height / 2f);
-
-        private async void ImitationQueue(int automaticQueue, Vector3 mouseWorldPosition)
+        private async void ImitationQueue(int automaticQueue)
         {
             while (automaticQueue != 0)
             {
-                _pool.TryGetBullet().Shot(_firearms.GetSpawnPoint((int)TypeGun.OneGun), mouseWorldPosition);
+                if (Physics.Raycast(SendRay(), out RaycastHit hit))
+                    _pool.TryGetBullet().Shot(_firearms.GetSpawnPoint((int)TypeGun.OneGun), hit.point);
+                
                 automaticQueue--;
 
                 await UniTask.Delay(Constants.DelayShots);
             }
         }
+        
+        private Ray SendRay() => 
+            _camera.ScreenPointToRay(GetCenter());
+
+        private Vector2 GetCenter() => 
+            new (Screen.width / 2f, Screen.height / 2f);
     }
 }

@@ -42,10 +42,10 @@ namespace Infrastructure.GameAI.StateMachine.States
             _gameFactory.CreateHud();
             CameraFollow camera = _gameFactory.CreateCamera();
             CameraFollowing(camera, hero);
-
             Pool pool = _gameFactory.CreatePool();
             InjectPool(hero, pool, camera);
-
+            pool.SetPointTurret(_gameFactory.CreateTurretPoints().Get());
+            
             _stateMachine.Enter<GameLoopState>();
         }
 

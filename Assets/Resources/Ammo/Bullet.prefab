@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2349854844776664469}
   - component: {fileID: 4718472341996630466}
   - component: {fileID: 977250490820836534}
+  - component: {fileID: 3754207417278915710}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vfxHitGreen: {fileID: 478502, guid: 1fe35c3ac77275e4d81bc09fcde78105, type: 3}
   _vfxHitRed: {fileID: 448740, guid: 71b02155078e4bf4e962f302d3675af2, type: 3}
+--- !u!135 &3754207417278915710
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237722507995740050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9099436621180281478
 GameObject:
   m_ObjectHideFlags: 0
