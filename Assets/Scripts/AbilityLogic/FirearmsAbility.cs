@@ -1,8 +1,12 @@
-﻿using Ammo.FirearmsGun;
+﻿using System;
+using System.Threading;
+using Ammo.FirearmsGun;
 using Ammo.Pools;
 using CameraLogic;
 using Cysharp.Threading.Tasks;
 using Infrastructure;
+using Services.Inputs;
+using Services.ServiceLocator;
 using UnityEngine;
 
 namespace AbilityLogic
@@ -11,8 +15,17 @@ namespace AbilityLogic
     {
         [SerializeField] private Firearms _firearms;
 
+        private readonly CancellationTokenSource _shootToken = new ();
+        
         private Pool _pool;
         private Camera _camera;
+        private bool _isAttack;
+
+        private void Awake()
+        {
+            var input = ServiceLocator.Container.Single<IInputService>();
+            input.OffShoot(OffShoot);
+        }
 
         public override int GetIndexAbility() =>
             (int)IndexAbility.Firearms;
@@ -23,18 +36,25 @@ namespace AbilityLogic
             _camera = cameraFollow.GetCameraMain();
         }
 
-        public override void Cast() => 
-            ImitationQueue(Constants.AutomaticQueue);
-
-        private async void ImitationQueue(int automaticQueue)
+        public override void Cast()
         {
-            while (automaticQueue != 0)
+            _isAttack = true;
+            ImitationQueue();
+        }
+
+        private void OffShoot()
+        {
+            _isAttack = false;
+            _shootToken.Cancel();
+        }
+
+        private async void ImitationQueue()
+        {
+            while (_isAttack)
             {
                 if (Physics.Raycast(SendRay(), out RaycastHit hit))
                     _pool.TryGetBullet().Shot(_firearms.GetSpawnPoint((int)TypeGun.OneGun), hit.point);
                 
-                automaticQueue--;
-
                 await UniTask.Delay(Constants.DelayShots);
             }
         }

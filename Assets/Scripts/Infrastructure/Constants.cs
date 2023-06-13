@@ -11,11 +11,9 @@ namespace Infrastructure
         public const int EnemyDamage = 10;
     
         //Firearms
-        public const int AutomaticQueue = 10;
         public const int DelayShots = 100;
         
         //turret
-        public const int AutomaticQueueTurret = 100;
         public const int DelayShotsTurret = 1500;
 
         //grenade
@@ -33,7 +31,7 @@ namespace Infrastructure
 
         //pool
         public const int CountSpawnGrenade = 20;
-        public const int CountSpawnBullets = 90;
+        public const int CountSpawnBullets = 150;
     
         //curtain
         public const int RateCurtain = 3;

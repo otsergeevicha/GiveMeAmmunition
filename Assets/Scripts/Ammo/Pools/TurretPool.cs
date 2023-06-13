@@ -7,7 +7,7 @@ namespace Ammo.Pools
     {
         private readonly Turret[] _turrets;
 
-        public TurretPool(IGameFactory factory, SpawnPointTurret[] spawnPointTurrets)
+        public TurretPool(IGameFactory factory, SpawnPointTurret[] spawnPointTurrets, Pool pool)
         {
             _turrets = new Turret[spawnPointTurrets.Length];
 
@@ -15,7 +15,8 @@ namespace Ammo.Pools
             {
                 Turret turret = factory.CreateTurret();
                 turret.SetPosition(spawnPointTurrets[i].GetPosition());
-                turret.gameObject.SetActive(false);
+                turret.Get<TurretShooting>().Inject(pool);
+                //turret.gameObject.SetActive(false);
                 _turrets[i] = turret;
             }
         }

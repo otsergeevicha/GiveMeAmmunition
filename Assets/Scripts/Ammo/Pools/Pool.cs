@@ -26,7 +26,7 @@ namespace Ammo.Pools
         }
 
         public void SetPointTurret(SpawnPointTurret[] pointTurret) => 
-            _turretPool = new TurretPool(_factory, pointTurret);
+            _turretPool = new TurretPool(_factory, pointTurret, this);
 
         public Bullet TryGetBullet() =>
             _bulletPool.GetBullets().FirstOrDefault(bullet =>

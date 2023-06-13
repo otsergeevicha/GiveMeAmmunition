@@ -32,7 +32,6 @@ namespace Ammo.FirearmsGun
             };
             
             SelectorGuns((int)TypeGun.OneGun);
-            print("здесь подкинуть на селектор засейвленный уровень оружия");
         }
 
         public Vector3 GetSpawnPoint(int typeGun) => 
