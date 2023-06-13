@@ -12,8 +12,10 @@ namespace Infrastructure
     
         //Firearms
         public const int DelayShots = 100;
-        
+        public const int FirearmsMagazineSize = 20;
+
         //turret
+        public const int TurretMagazineSize = 10;
         public const int DelayShotsTurret = 1500;
 
         //grenade
@@ -21,6 +23,7 @@ namespace Infrastructure
         public const float ForceExplosion = 500f;
         public const float AngleInDegrees = 45f;
         public const int GrenadeDamage = 50;
+        public const int GrenadeMagazineSize = 20;
         
         //shield
         public const int TimeLifeShield = 5000;

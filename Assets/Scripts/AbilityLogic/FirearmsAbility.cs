@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using AbilityLogic.Cartridges;
 using Ammo.FirearmsGun;
 using Ammo.Pools;
 using CameraLogic;
@@ -20,11 +21,13 @@ namespace AbilityLogic
         private Pool _pool;
         private Camera _camera;
         private bool _isAttack;
+        private MagazineFirearms _magazine;
 
         private void Awake()
         {
-            var input = ServiceLocator.Container.Single<IInputService>();
+            IInputService input = ServiceLocator.Container.Single<IInputService>();
             input.OffShoot(OffShoot);
+            _magazine = new MagazineFirearms(Constants.FirearmsMagazineSize);
         }
 
         public override int GetIndexAbility() =>
@@ -53,7 +56,14 @@ namespace AbilityLogic
             while (_isAttack)
             {
                 if (Physics.Raycast(SendRay(), out RaycastHit hit))
-                    _pool.TryGetBullet().Shot(_firearms.GetSpawnPoint((int)TypeGun.OneGun), hit.point);
+                {
+                    if (_magazine.Check())
+                    {
+                        _pool.TryGetBullet().Shot(_firearms.GetSpawnPoint((int)TypeGun.OneGun), hit.point);
+                        _magazine.Spend();
+                    }
+                    
+                }
                 
                 await UniTask.Delay(Constants.DelayShots);
             }

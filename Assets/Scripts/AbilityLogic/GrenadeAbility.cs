@@ -1,4 +1,5 @@
 ﻿using System;
+using AbilityLogic.Cartridges;
 using Ammo.Ammunition;
 using Ammo.Pools;
 using CameraLogic;
@@ -19,14 +20,16 @@ namespace AbilityLogic
         private Vector3 _direction;
         private Pool _pool;
         private Camera _camera;
+        private MagazineGrenade _magazine;
 
         public override int GetIndexAbility() => 
             (int)IndexAbility.Grenade;
 
-        public void InjectPool(Pool pool, CameraFollow cameraFollow)
+        public void Construct(Pool pool, CameraFollow cameraFollow)
         {
             _pool = pool;
             _camera = cameraFollow.GetCameraMain();
+            _magazine = new MagazineGrenade(Constants.GrenadeMagazineSize);
         }
 
         public override void Cast()
@@ -35,22 +38,27 @@ namespace AbilityLogic
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
-                Vector3 fromTo = raycastHit.point - transform.position;
-                Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
+                if (_magazine.Check())
+                {
+                    Vector3 fromTo = raycastHit.point - transform.position;
+                    Vector3 fromToXZ = new Vector3(fromTo.x, 0f, fromTo.z);
             
-                _axisX = fromToXZ.magnitude;
-                _axisY = fromTo.y;
+                    _axisX = fromToXZ.magnitude;
+                    _axisY = fromTo.y;
 
-                float angleInRadians = Constants.AngleInDegrees * MathF.PI / 180;
-                float rootOfSpeed = (_ourGravity * _axisX * _axisX) / (2 * (_axisY - Mathf.Tan(angleInRadians) * _axisX) *
-                                                                       Mathf.Pow(Mathf.Cos(angleInRadians), 2));
-                float speed = Mathf.Sqrt(Mathf.Abs(rootOfSpeed));
+                    float angleInRadians = Constants.AngleInDegrees * MathF.PI / 180;
+                    float rootOfSpeed = (_ourGravity * _axisX * _axisX) / (2 * (_axisY - Mathf.Tan(angleInRadians) * _axisX) *
+                                                                           Mathf.Pow(Mathf.Cos(angleInRadians), 2));
+                    float speed = Mathf.Sqrt(Mathf.Abs(rootOfSpeed));
 
-                Grenade grenade = _pool.TryGetGrenade();
-                grenade.gameObject.SetActive(true);
-                grenade.transform.position = _spawnPointGrenade.position;
-                grenade.transform.LookAt(raycastHit.point);
-                grenade.Get<Rigidbody>().velocity = _spawnPointGrenade.forward * speed;
+                    Grenade grenade = _pool.TryGetGrenade();
+                    grenade.gameObject.SetActive(true);
+                    grenade.transform.position = _spawnPointGrenade.position;
+                    grenade.transform.LookAt(raycastHit.point);
+                    grenade.Get<Rigidbody>().velocity = _spawnPointGrenade.forward * speed;
+                    
+                    _magazine.Spend();
+                }
             }
         }
         

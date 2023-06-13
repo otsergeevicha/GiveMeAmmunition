@@ -25,8 +25,8 @@ namespace CameraLogic
 
         private float _rotationVelocity;
 
-        private float _cinemachineTargetYaw;
-        private float _cinemachineTargetPitch;
+        private float _targetYaw;
+        private float _targetPitch;
         private bool _zoom;
 
         private void Awake()
@@ -77,15 +77,15 @@ namespace CameraLogic
             {
                 float deltaTimeMultiplier = _input.IsCurrentDevice() ? _sensitivity : Time.deltaTime;
 
-                _cinemachineTargetYaw += _input.LookAxis.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.LookAxis.y * deltaTimeMultiplier;
+                _targetYaw += _input.LookAxis.x * deltaTimeMultiplier;
+                _targetPitch += _input.LookAxis.y * deltaTimeMultiplier;
             }
 
-            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, _bottomClamp, _topClamp);
+            _targetYaw = ClampAngle(_targetYaw, float.MinValue, float.MaxValue);
+            _targetPitch = ClampAngle(_targetPitch, _bottomClamp, _topClamp);
 
-            _following.rotation = Quaternion.Euler(_cinemachineTargetPitch + _cameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
+            _following.rotation = Quaternion.Euler(_targetPitch + _cameraAngleOverride,
+                _targetYaw, 0.0f);
         }
 
         private float ClampAngle(float lfAngle, float lfMin, float lfMax)

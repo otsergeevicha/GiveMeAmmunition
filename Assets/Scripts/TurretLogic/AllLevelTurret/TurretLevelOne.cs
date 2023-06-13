@@ -1,7 +1,7 @@
 ﻿using Plugins.MonoCache;
 using UnityEngine;
 
-namespace TurretLogic
+namespace TurretLogic.AllLevelTurret
 {
     public class TurretLevelOne : MonoCache
     {

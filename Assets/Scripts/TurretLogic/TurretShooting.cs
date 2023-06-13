@@ -1,5 +1,5 @@
-﻿using Ammo.Pools;
-using System.Threading;
+﻿using System.Threading;
+using Ammo.Pools;
 using Cysharp.Threading.Tasks;
 using EnemyLogic;
 using Infrastructure;
@@ -18,13 +18,17 @@ namespace TurretLogic
         private Turret _turret;
         private Pool _pool;
         private bool _isAttack;
+        private MagazineTurret _magazine;
 
-        private void Awake() => 
+        private void Awake()
+        {
             _turret = Get<Turret>();
+            _magazine = new MagazineTurret(Constants.TurretMagazineSize);
+        }
 
         private void OnTriggerEnter(Collider collision)
         {
-            if (!collision.gameObject.TryGetComponent(out Enemy enemy)) 
+            if (!collision.gameObject.TryGetComponent(out Hero enemy)) 
                 return;
             
             _isAttack = true;
@@ -33,7 +37,7 @@ namespace TurretLogic
 
         private void OnTriggerExit(Collider collision)
         {
-            if (!collision.gameObject.TryGetComponent(out Enemy _)) 
+            if (!collision.gameObject.TryGetComponent(out Hero _)) 
                 return;
             
             _isAttack = false;
@@ -50,7 +54,11 @@ namespace TurretLogic
                 for (int i = 0; i < _turretGun.Length; i++)
                     _turretGun[i].LookAt(currentTarget);
 
-                _pool.TryGetBullet().Shot(_turret.GetSpawnPoint((int)TypeTurret.LevelOne), currentTarget.position);
+                if (_magazine.Check())
+                {
+                    _pool.TryGetBullet().Shot(_turret.GetSpawnPoint((int)TypeTurret.LevelOne), currentTarget.position);
+                    _magazine.Spend();
+                }
 
                 await UniTask.Delay(Constants.DelayShotsTurret);
             }

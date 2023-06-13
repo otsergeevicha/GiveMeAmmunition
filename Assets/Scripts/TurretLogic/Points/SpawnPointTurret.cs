@@ -1,7 +1,7 @@
 ﻿using Plugins.MonoCache;
 using UnityEngine;
 
-namespace TurretLogic
+namespace TurretLogic.Points
 {
     public class SpawnPointTurret : MonoCache
     {
