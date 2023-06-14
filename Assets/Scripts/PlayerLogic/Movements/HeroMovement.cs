@@ -1,11 +1,10 @@
 ﻿using System;
-using CameraLogic;
 using Infrastructure;
 using Services.Inputs;
 using Services.ServiceLocator;
 using UnityEngine;
 
-namespace PlayerLogic
+namespace PlayerLogic.Movements
 {
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(Hero))]

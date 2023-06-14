@@ -17,7 +17,7 @@ namespace Ammo.Pools
                 Turret turret = factory.CreateTurret();
                 turret.SetPosition(spawnPointTurrets[i].GetPosition());
                 turret.Get<TurretShooting>().Inject(pool);
-                //turret.gameObject.SetActive(false);
+                turret.gameObject.SetActive(false);
                 _turrets[i] = turret;
             }
         }

@@ -6,7 +6,9 @@ namespace Infrastructure
     {
         //hero
         public const int HeroSpeed = 4;
-    
+        public const int SizeHeroBasket = 10;
+        public const int AmmunitionDeliveryRate = 500;
+
         //enemy
         public const int EnemyDamage = 10;
     
@@ -24,6 +26,11 @@ namespace Infrastructure
         public const float AngleInDegrees = 45f;
         public const int GrenadeDamage = 50;
         public const int GrenadeMagazineSize = 20;
+        
+        //AmmoDepot
+        public const int AmmoDepotSize = 20;
+        public const int TimeSpawnAirDrop = 10;
+        public const int AmountAmmo = 1;
         
         //shield
         public const int TimeLifeShield = 5000;

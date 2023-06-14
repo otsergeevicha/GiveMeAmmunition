@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Ammo.Pools;
 using Cysharp.Threading.Tasks;
 using EnemyLogic;
@@ -28,7 +29,7 @@ namespace TurretLogic
 
         private void OnTriggerEnter(Collider collision)
         {
-            if (!collision.gameObject.TryGetComponent(out Hero enemy)) 
+            if (!collision.gameObject.TryGetComponent(out Enemy enemy)) 
                 return;
             
             _isAttack = true;
@@ -37,15 +38,22 @@ namespace TurretLogic
 
         private void OnTriggerExit(Collider collision)
         {
-            if (!collision.gameObject.TryGetComponent(out Hero _)) 
+            if (!collision.gameObject.TryGetComponent(out Enemy _)) 
                 return;
             
             _isAttack = false;
             _activeTurretToken.Cancel();
         }
 
+        public void ApplyAmmo(int newAmmo, Action fulled) => 
+            _magazine.ApplyAmmo(newAmmo, () => 
+                fulled?.Invoke());
+
         public void Inject(Pool pool) => 
             _pool = pool;
+
+        public int Shortage() => 
+            _magazine.Shortage;
 
         private async void ImitationQueue(Transform currentTarget)
         {
