@@ -1,12 +1,13 @@
 ﻿using System.Linq;
 using AbilityLogic;
+using Plugins.MonoCache;
 using Services.Inputs;
 using Services.ServiceLocator;
 using UnityEngine;
 
 namespace PlayerLogic.Shooting
 {
-    public class HeroShooting : Hero
+    public class HeroShooting : MonoCache
     {
         [SerializeField] private AbilitySelector _abilitySelector;
 

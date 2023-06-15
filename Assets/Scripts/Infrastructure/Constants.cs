@@ -12,6 +12,10 @@ namespace Infrastructure
         //enemy
         public const int EnemyDamage = 10;
     
+        //regeneration
+        public const float DelayRegeneration = .5f;
+        public const int DelayRegenerationMagazine = 5000;
+        
         //Firearms
         public const int DelayShots = 100;
         public const int FirearmsMagazineSize = 20;
@@ -25,7 +29,7 @@ namespace Infrastructure
         public const float ForceExplosion = 500f;
         public const float AngleInDegrees = 45f;
         public const int GrenadeDamage = 50;
-        public const int GrenadeMagazineSize = 20;
+        public const int GrenadeMagazineSize = 1;
         
         //AmmoDepot
         public const int AmmoDepotSize = 20;

@@ -12,11 +12,14 @@ namespace PlayerLogic
     [RequireComponent(typeof(HeroCarrier))]
     public class Hero : MonoCache, IHealth
     {
-        protected bool IsLoadedCargo;
+        private bool _isLoadedCargo;
 
         public void TakeDamage(int damage) {}
 
         public bool IsLoaded() =>
-            IsLoadedCargo;
+            _isLoadedCargo;
+
+        public void SetLoaded(bool newStatus) => 
+            _isLoadedCargo = newStatus;
     }
 }

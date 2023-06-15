@@ -19,7 +19,7 @@ namespace PlayerLogic.Carrier
             _size;
 
         public bool IsReplenishmentRequired() =>
-            _maxSize != _size;
+            _size != _maxSize;
 
         public int GetAmmo(int requiredAmountAmmo)
         {

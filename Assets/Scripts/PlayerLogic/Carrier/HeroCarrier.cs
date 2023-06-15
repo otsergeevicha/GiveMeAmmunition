@@ -2,32 +2,39 @@
 using AmmoRepository;
 using Cysharp.Threading.Tasks;
 using Infrastructure;
+using Plugins.MonoCache;
 using TurretLogic;
 using UnityEngine;
 
 namespace PlayerLogic.Carrier
 {
-    public class HeroCarrier : Hero
+    [RequireComponent(typeof(Hero))]
+    public class HeroCarrier : MonoCache
     {
         private readonly CancellationTokenSource _tokenReplenishment = new();
         private HeroBasket _basket;
         private bool _isReplenishment;
+        private Hero _hero;
 
-        private void Awake() =>
+        private void Awake()
+        {
             _basket = new HeroBasket(Constants.SizeHeroBasket);
+            _hero = Get<Hero>();
+        }
 
-        protected override void OnEnabled() => 
+        protected override void OnEnabled() =>
             _basket.IsEmpty += ChangeStatusCarrier;
 
-        protected override void OnDisabled() => 
+        protected override void OnDisabled() =>
             _basket.IsEmpty -= ChangeStatusCarrier;
 
         private void OnTriggerEnter(Collider collision)
         {
-            if (collision.TryGetComponent(out AmmoPoint ammoPoint) 
+            if (collision.TryGetComponent(out AmmoPoint ammoPoint)
                 && _basket.IsReplenishmentRequired())
             {
                 _isReplenishment = true;
+                _hero.SetLoaded(true);
                 ReplenishmentBasket(ammoPoint);
             }
 
@@ -45,13 +52,13 @@ namespace PlayerLogic.Carrier
         {
             if (collision.TryGetComponent(out AmmoPoint _))
             {
-                _isReplenishment = false;
+                OffReplenishment();
                 CancelToken();
             }
         }
 
-        private void ChangeStatusCarrier() => 
-            IsLoadedCargo = false;
+        private void ChangeStatusCarrier() =>
+            _hero.SetLoaded(false);
 
         private async void ReplenishingAmmoTurret(TurretShooting turret)
         {
@@ -59,10 +66,10 @@ namespace PlayerLogic.Carrier
             {
                 turret.ApplyAmmo(_basket.GetAmmo(Constants.AmountAmmo), delegate
                 {
-                    _isReplenishment = false;
+                    OffReplenishment();
                     CancelToken();
                 });
-                
+
                 await UniTask.Delay(Constants.AmmunitionDeliveryRate);
             }
         }
@@ -73,8 +80,7 @@ namespace PlayerLogic.Carrier
             {
                 _basket.ApplyAmmo(depot.GetAmmo(), delegate
                 {
-                    _isReplenishment = false;
-                    IsLoadedCargo = true;
+                    OffReplenishment();
                     CancelToken();
                 });
 
@@ -82,7 +88,10 @@ namespace PlayerLogic.Carrier
             }
         }
 
-        private void CancelToken() => 
+        private void OffReplenishment() =>
+            _isReplenishment = false;
+
+        private void CancelToken() =>
             _tokenReplenishment.Cancel();
     }
 }

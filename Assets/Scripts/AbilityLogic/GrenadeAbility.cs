@@ -59,6 +59,8 @@ namespace AbilityLogic
                     
                     _magazine.Spend();
                 }
+                
+                _magazine.Shortage();
             }
         }
         
