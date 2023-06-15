@@ -64,14 +64,15 @@ namespace PlayerLogic.Carrier
         {
             while (_isReplenishment)
             {
-                turret.ApplyAmmo(_basket.GetAmmo(Constants.AmountAmmo), delegate
-                {
-                    OffReplenishment();
-                    CancelToken();
-                });
-
+                turret.ApplyAmmo(_basket.GetAmmo(Constants.AmountAmmo), Fulled);
                 await UniTask.Delay(Constants.AmmunitionDeliveryRate);
             }
+        }
+
+        private void Fulled()
+        {
+            OffReplenishment();
+            CancelToken();
         }
 
         private async void ReplenishmentBasket(AmmoPoint depot)

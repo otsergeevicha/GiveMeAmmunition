@@ -75,7 +75,9 @@ namespace CameraLogic
         {
             if (_input.LookAxis.sqrMagnitude > Single.Epsilon)
             {
-                float deltaTimeMultiplier = _input.IsCurrentDevice() ? _sensitivity : Time.deltaTime;
+                float deltaTimeMultiplier = _input.IsCurrentDevice() 
+                    ? _sensitivity 
+                    : Time.deltaTime;
 
                 _targetYaw += _input.LookAxis.x * deltaTimeMultiplier;
                 _targetPitch += _input.LookAxis.y * deltaTimeMultiplier;

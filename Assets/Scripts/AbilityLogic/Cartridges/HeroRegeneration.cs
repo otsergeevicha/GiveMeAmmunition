@@ -10,18 +10,20 @@ namespace AbilityLogic.Cartridges
         private readonly CancellationTokenSource _tokenReplenishment = new();
         private readonly IMagazine _magazine;
 
-        public bool IsWaiting;
-        
+        private bool _isWaiting;
         private bool _isReplenishment;
 
         public HeroRegeneration(IMagazine magazine) => 
             _magazine = magazine;
 
+        public bool IsWaiting =>
+            _isWaiting;
+        
         public async void Launch(int delayRegeneration)
         {
-            IsWaiting = true;
+            _isWaiting = true;
             await UniTask.Delay(delayRegeneration);
-            IsWaiting = false;
+            _isWaiting = false;
             
             Replenishment();
         }

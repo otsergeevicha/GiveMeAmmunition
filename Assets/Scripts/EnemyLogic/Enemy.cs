@@ -24,9 +24,6 @@ namespace EnemyLogic
             _damage = Constants.EnemyDamage;
         }
 
-        public void TakeDamage(int damage)
-        {
-            throw new NotImplementedException();
-        }
+        public void TakeDamage(int damage) {}
     }
 }
