@@ -13,9 +13,6 @@ namespace TurretLogic
             _maxSize = size;
         }
 
-        public int Shortage =>
-            _maxSize - _size;
-
         public void Spend() => 
             _size--;
 

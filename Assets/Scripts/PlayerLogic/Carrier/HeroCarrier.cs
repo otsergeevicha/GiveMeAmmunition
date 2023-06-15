@@ -28,7 +28,7 @@ namespace PlayerLogic.Carrier
                 && _basket.IsReplenishmentRequired())
             {
                 _isReplenishment = true;
-                ReplenishmentBasket(_basket.Shortage(), ammoPoint);
+                ReplenishmentBasket(ammoPoint);
             }
 
             if (collision.TryGetComponent(out TurretShooting turret))
@@ -36,7 +36,7 @@ namespace PlayerLogic.Carrier
                 if (_basket.Cartridge != 0)
                 {
                     _isReplenishment = true;
-                    ReplenishingAmmoTurret(turret.Shortage(), turret);
+                    ReplenishingAmmoTurret(turret);
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace PlayerLogic.Carrier
         private void ChangeStatusCarrier() => 
             IsLoadedCargo = false;
 
-        private async void ReplenishingAmmoTurret(int shortage, TurretShooting turret)
+        private async void ReplenishingAmmoTurret(TurretShooting turret)
         {
             while (_isReplenishment)
             {
@@ -67,7 +67,7 @@ namespace PlayerLogic.Carrier
             }
         }
 
-        private async void ReplenishmentBasket(int shortage, AmmoPoint depot)
+        private async void ReplenishmentBasket(AmmoPoint depot)
         {
             while (_isReplenishment)
             {

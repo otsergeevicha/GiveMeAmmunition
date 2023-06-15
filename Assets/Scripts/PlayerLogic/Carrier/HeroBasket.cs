@@ -32,9 +32,6 @@ namespace PlayerLogic.Carrier
             IsEmpty?.Invoke();
             return _size;
         }
-        
-        public int Shortage() =>
-            _maxSize - _size;
 
         public void ApplyAmmo(int getAmmo, Action fulled)
         {

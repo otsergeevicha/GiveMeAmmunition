@@ -4,7 +4,6 @@ using Ammo.Pools;
 using Cysharp.Threading.Tasks;
 using EnemyLogic;
 using Infrastructure;
-using PlayerLogic;
 using Plugins.MonoCache;
 using UnityEngine;
 
@@ -52,15 +51,11 @@ namespace TurretLogic
         public void Inject(Pool pool) => 
             _pool = pool;
 
-        public int Shortage() => 
-            _magazine.Shortage;
-
         private async void ImitationQueue(Transform currentTarget)
         {
             while (_isAttack)
             {
-                for (int i = 0; i < _turretGun.Length; i++)
-                    _turretGun[i].LookAt(currentTarget);
+                RotateTurret(currentTarget);
 
                 if (_magazine.Check())
                 {
@@ -70,6 +65,12 @@ namespace TurretLogic
 
                 await UniTask.Delay(Constants.DelayShotsTurret);
             }
+        }
+
+        private void RotateTurret(Transform currentTarget)
+        {
+            for (int i = 0; i < _turretGun.Length; i++)
+                _turretGun[i].LookAt(currentTarget);
         }
     }
 }
