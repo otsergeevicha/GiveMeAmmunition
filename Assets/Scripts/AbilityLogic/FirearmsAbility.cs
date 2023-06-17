@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using AbilityLogic.Cartridges;
 using Ammo.FirearmsGun;
-using Ammo.Pools;
 using CameraLogic;
 using Cysharp.Threading.Tasks;
 using Infrastructure;
+using Infrastructure.Factory.Pools;
 using Services.Inputs;
 using Services.ServiceLocator;
 using UnityEngine;

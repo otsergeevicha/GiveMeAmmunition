@@ -1,9 +1,9 @@
 ﻿using System;
 using AbilityLogic.Cartridges;
 using Ammo.Ammunition;
-using Ammo.Pools;
 using CameraLogic;
 using Infrastructure;
+using Infrastructure.Factory.Pools;
 using UnityEngine;
 
 namespace AbilityLogic
