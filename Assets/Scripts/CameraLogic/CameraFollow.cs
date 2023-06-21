@@ -86,8 +86,7 @@ namespace CameraLogic
             _targetYaw = ClampAngle(_targetYaw, float.MinValue, float.MaxValue);
             _targetPitch = ClampAngle(_targetPitch, _bottomClamp, _topClamp);
 
-            _following.rotation = Quaternion.Euler(_targetPitch + _cameraAngleOverride,
-                _targetYaw, 0.0f);
+            _following.rotation = Quaternion.Euler(_targetPitch + _cameraAngleOverride, _targetYaw, 0.0f);
         }
 
         private float ClampAngle(float lfAngle, float lfMin, float lfMax)

@@ -12,7 +12,7 @@ namespace TurretLogic
         LevelThree = 2,
         LevelFour = 3
     }
-    
+
     [RequireComponent(typeof(TurretShooting))]
     public class Turret : MonoCache
     {
@@ -21,8 +21,11 @@ namespace TurretLogic
         [SerializeField] private TurretLevelThree _turretLevelThree;
         [SerializeField] private TurretLevelFour _turretLevelFour;
         
+        [SerializeField] private Transform _vfxUpgrade;
+
         private Dictionary<int, Transform[]> _turrets;
         private Vector3 _oldPoint;
+        public bool Purchased;
 
         private void Awake()
         {
@@ -33,21 +36,24 @@ namespace TurretLogic
                 [(int)TypeTurret.LevelThree] = _turretLevelThree.Get(),
                 [(int)TypeTurret.LevelFour] = _turretLevelFour.Get()
             };
-            
+
             SelectorTurret((int)TypeTurret.LevelOne);
         }
 
-        public Vector3 GetSpawnPoint(int typeTurret) => 
-            _turrets.ContainsKey(typeTurret) 
-                ? TryGetNextPoint(_turrets[typeTurret]) 
+        public Vector3 GetSpawnPoint(int typeTurret) =>
+            _turrets.ContainsKey(typeTurret)
+                ? TryGetNextPoint(_turrets[typeTurret])
                 : Vector3.zero;
 
-        public void SetPosition(Vector3 getPosition) => 
-            transform.position = getPosition;
+        public void SetPosition(Transform getTransform)
+        {
+            transform.position = getTransform.position;
+            transform.parent = getTransform;
+        }
 
         private void SelectorTurret(int typeGun)
         {
-            foreach (var value in _turrets) 
+            foreach (var value in _turrets)
                 value.Value[0].gameObject
                     .SetActive(value.Key == typeGun);
         }
@@ -59,7 +65,17 @@ namespace TurretLogic
             return currentPoint;
         }
 
-        private Vector3 CurrentPoint(Transform[] spawnPoints) => 
+        private Vector3 CurrentPoint(Transform[] spawnPoints) =>
             spawnPoints[Random.Range(0, spawnPoints.Length)].position;
+
+        public void Upgrade()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Purchase()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

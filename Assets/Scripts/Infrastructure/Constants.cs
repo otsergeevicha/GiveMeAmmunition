@@ -11,6 +11,9 @@ namespace Infrastructure
 
         //enemy
         public const int EnemyDamage = 10;
+        
+        //turret
+        public const int PricePurchaseTurret = 1;
     
         //regeneration
         public const float DelayRegeneration = .5f;

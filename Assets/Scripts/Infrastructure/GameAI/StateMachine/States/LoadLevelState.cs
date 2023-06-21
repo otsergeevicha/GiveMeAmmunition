@@ -7,6 +7,7 @@ using Infrastructure.LoadingLogic.ScreenLoading;
 using PlayerLogic;
 using Services.Factory;
 using Services.StateMachine;
+using TurretLogic.Points;
 
 namespace Infrastructure.GameAI.StateMachine.States
 {
@@ -16,10 +17,12 @@ namespace Infrastructure.GameAI.StateMachine.States
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _loadingCurtain;
         private readonly IGameFactory _gameFactory;
+        private readonly IWallet _wallet;
 
         public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
-            IGameFactory gameFactory)
+            IGameFactory gameFactory, IWallet wallet)
         {
+            _wallet = wallet;
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
             _loadingCurtain = loadingCurtain;
@@ -44,7 +47,8 @@ namespace Infrastructure.GameAI.StateMachine.States
             CameraFollowing(camera, hero);
             Pool pool = _gameFactory.CreatePool();
             InjectPool(hero, pool, camera);
-            pool.SetPointTurret(_gameFactory.CreateTurretPoints().Get());
+            SpawnPointTurret[] spawnPointTurret = _gameFactory.CreateTurretPoints().Get();
+            pool.SetPointTurret(spawnPointTurret, _wallet);
             
             _stateMachine.Enter<GameLoopState>();
         }

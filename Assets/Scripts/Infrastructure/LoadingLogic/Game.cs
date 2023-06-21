@@ -1,5 +1,4 @@
-﻿using Infrastructure.GameAI;
-using Infrastructure.GameAI.StateMachine;
+﻿using Infrastructure.GameAI.StateMachine;
 using Infrastructure.LoadingLogic.ScreenLoading;
 
 namespace Infrastructure.LoadingLogic

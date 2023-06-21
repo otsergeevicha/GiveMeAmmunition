@@ -12,6 +12,9 @@ namespace TurretLogic
     public class TurretShooting : MonoCache
     {
         [SerializeField] private Transform[] _turretGun;
+        
+        [SerializeField] private Transform _redCircle;
+        [SerializeField] private Transform _greenCircle;
 
         private readonly CancellationTokenSource _activeTurretToken = new ();
         

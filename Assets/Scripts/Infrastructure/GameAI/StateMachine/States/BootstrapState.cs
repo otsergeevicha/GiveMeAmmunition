@@ -8,6 +8,7 @@ using Services.Inputs;
 using Services.SaveLoadLogic;
 using Services.ServiceLocator;
 using Services.StateMachine;
+using TurretLogic.Points;
 
 namespace Infrastructure.GameAI.StateMachine.States
 {
@@ -38,6 +39,7 @@ namespace Infrastructure.GameAI.StateMachine.States
             ServiceLocator.Container.RegisterSingle<IInputService>(new InputService());
             ServiceLocator.Container.RegisterSingle<IAssetsProvider>(new AssetsProvider());
             ServiceLocator.Container.RegisterSingle<IGameFactory>(new GameFactory(ServiceLocator.Container.Single<IAssetsProvider>()));
+            ServiceLocator.Container.RegisterSingle<IWallet>(new Wallet());
         }
     }
 }

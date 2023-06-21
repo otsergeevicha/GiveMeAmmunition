@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using Infrastructure;
 using Plugins.MonoCache;
 using TurretLogic;
+using TurretLogic.Points;
 using UnityEngine;
 
 namespace PlayerLogic.Carrier
@@ -31,19 +32,19 @@ namespace PlayerLogic.Carrier
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.TryGetComponent(out AmmoPoint ammoPoint)
-                && _basket.IsReplenishmentRequired())
+                 && _basket.IsReplenishmentRequired())
             {
                 _isReplenishment = true;
                 _hero.SetLoaded(true);
                 ReplenishmentBasket(ammoPoint);
             }
 
-            if (collision.TryGetComponent(out TurretShooting turret))
+            if (collision.TryGetComponent(out SpawnPointTurret pointTurret))
             {
                 if (_basket.Cartridge != 0)
                 {
                     _isReplenishment = true;
-                    ReplenishingAmmoTurret(turret);
+                    ReplenishingAmmoTurret(pointTurret.ChildrenGet<TurretShooting>());
                 }
             }
         }

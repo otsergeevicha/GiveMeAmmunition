@@ -25,8 +25,8 @@ namespace Infrastructure.Factory.Pools
             _bulletPool = new BulletPool(_factory);
         }
 
-        public void SetPointTurret(SpawnPointTurret[] pointTurret) => 
-            _turretPool = new TurretPool(_factory, pointTurret, this);
+        public void SetPointTurret(SpawnPointTurret[] pointTurret, IWallet wallet) => 
+            _turretPool = new TurretPool(_factory, pointTurret, this, wallet);
 
         public Bullet TryGetBullet() =>
             _bulletPool.GetBullets().FirstOrDefault(bullet =>

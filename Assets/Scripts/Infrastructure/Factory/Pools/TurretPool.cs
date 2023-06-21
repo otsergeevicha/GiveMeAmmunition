@@ -8,7 +8,7 @@ namespace Infrastructure.Factory.Pools
     {
         private readonly Turret[] _turrets;
 
-        public TurretPool(IGameFactory factory, SpawnPointTurret[] spawnPointTurrets, Pool pool)
+        public TurretPool(IGameFactory factory, SpawnPointTurret[] spawnPointTurrets, Pool pool, IWallet wallet)
         {
             _turrets = new Turret[spawnPointTurrets.Length];
 
@@ -16,8 +16,10 @@ namespace Infrastructure.Factory.Pools
             {
                 Turret turret = factory.CreateTurret();
                 turret.SetPosition(spawnPointTurrets[i].GetPosition());
+                spawnPointTurrets[i].Inject(wallet);
+                spawnPointTurrets[i].SetTurret(turret);
                 turret.Get<TurretShooting>().Inject(pool);
-                //turret.gameObject.SetActive(false);
+                turret.gameObject.SetActive(false);
                 _turrets[i] = turret;
             }
         }
