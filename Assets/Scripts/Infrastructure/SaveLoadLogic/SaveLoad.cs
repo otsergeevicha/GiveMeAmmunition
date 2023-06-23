@@ -1,32 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using Services.SaveLoadLogic;
+using UnityEngine;
 
 namespace Infrastructure.SaveLoadLogic
 {
     public class SaveLoad : ISave
     {
-        private readonly Dictionary<Type, object> _datas = new ();
-        private readonly DataBase _dataBase;
-
-        public SaveLoad() : this(new DataBase()) {}
-        
-        public SaveLoad(DataBase dataBase) => 
-            _dataBase = dataBase;
-
-        public TData Get<TData>()
+        public SaveLoad()
         {
-            if (_datas.ContainsKey(typeof(TData)))
-                return (TData)_datas[typeof(TData)];
-
-            return _dataBase.Get<TData>();
+            Progress = PlayerPrefs.HasKey(Constants.Progress)
+                ? JsonUtility.FromJson<Progress>(PlayerPrefs.GetString(Constants.Progress))
+                : new Progress();
         }
 
-        public void Add<T>(T data)
-        {
-            _datas[typeof(T)] = data;
+        public Progress Progress { get; }
 
-            _dataBase.Set(data);
+        public void Save()
+        {
+            PlayerPrefs.SetString(Constants.Progress, JsonUtility.ToJson(Progress));
+            PlayerPrefs.Save();
         }
     }
 }

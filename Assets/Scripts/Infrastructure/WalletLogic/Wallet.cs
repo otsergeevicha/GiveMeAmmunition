@@ -1,17 +1,19 @@
 ﻿using System;
 using Services.SaveLoadLogic;
-using Services.ServiceLocator;
 using Services.Wallet;
 
 namespace Infrastructure.WalletLogic
 {
     public class Wallet : IWallet
     {
-        private readonly ISave _save;
-        private int _settlementAccount = 50;
+        private readonly ISave _saveLoadService;
+        private int _settlementAccount;
 
-        public Wallet() => 
-            _save = ServiceLocator.Container.Single<ISave>();
+        public Wallet(ISave saveLoadService)
+        {
+            _saveLoadService = saveLoadService;
+            _settlementAccount = _saveLoadService.Progress.DataWallet.Read;
+        }
 
         public event Action<int> Changed;
 
@@ -32,10 +34,13 @@ namespace Infrastructure.WalletLogic
             Save();
         }
 
+        private void Save()
+        {
+            _saveLoadService.Progress.DataWallet.Record(_settlementAccount);
+            _saveLoadService.Save();
+        }
+
         private void Notify() => 
             Changed?.Invoke(_settlementAccount);
-
-        private void Save() => 
-            _save.Add(this);
     }
 }

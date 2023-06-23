@@ -1,7 +1,9 @@
-﻿using Infrastructure;
+﻿using System;
+using Infrastructure;
 
 namespace TurretLogic
 {
+    [Serializable]
     public class TurretUpgrade
     {
         private int _currentLevel = (int)TypeTurret.LevelOne;

@@ -18,25 +18,17 @@ namespace Infrastructure.Factory.Pools
         private TurretPool _turretPool;
 
         private IGameFactory _factory;
-        private ISave _save;
 
         private void Awake()
         {
             _factory = ServiceLocator.Container.Single<IGameFactory>();
-            _save = ServiceLocator.Container.Single<ISave>();
             
             _grenadePool = new GrenadePool(_factory);
             _bulletPool = new BulletPool(_factory);
         }
 
-        protected override void OnDisabled() => 
-            _save.Add(_turretPool);
-
-        public void InjectDependence(SpawnPointTurret[] pointTurret, IWallet wallet)
-        {
-            _turretPool = GetCurrentTurretPool();
-            _turretPool.InjectDependence(_factory, pointTurret, this, wallet, _save);
-        }
+        public void InjectDependence(SpawnPointTurret[] pointTurret, IWallet wallet) => 
+            _turretPool = new TurretPool(_factory, pointTurret, this, wallet, ServiceLocator.Container.Single<ISave>());
 
         public Bullet TryGetBullet() =>
             _bulletPool.GetBullets().FirstOrDefault(bullet =>
@@ -45,8 +37,5 @@ namespace Infrastructure.Factory.Pools
         public Grenade TryGetGrenade() =>
             _grenadePool.GetGrenades().FirstOrDefault(grenade =>
                 grenade.isActiveAndEnabled == false);
-
-        private TurretPool GetCurrentTurretPool() => 
-            _save.Get<TurretPool>() ?? new TurretPool();
     }
 }

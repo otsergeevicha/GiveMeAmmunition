@@ -4,6 +4,9 @@ namespace Infrastructure
 {
     public static class Constants
     {
+        //saveLoad
+        public const string Progress = "Progress";
+        
         //hero
         public const int HeroSpeed = 4;
         public const int SizeHeroBasket = 10;

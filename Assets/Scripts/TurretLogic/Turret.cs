@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Infrastructure;
 using Plugins.MonoCache;
-using Services.SaveLoadLogic;
 using Services.Wallet;
 using TurretLogic.AllLevelTurret;
 using UnityEngine;
@@ -31,7 +30,6 @@ namespace TurretLogic
         private IWallet _wallet;
         private Transform _upgradeCircle;
         private TurretUpgrade _turretUpgrade;
-        private ISave _saveService;
 
         public bool Purchased { get; private set; }
 
@@ -45,28 +43,21 @@ namespace TurretLogic
                 [(int)TypeTurret.LevelFour] = _turretLevelFour.Get()
             };
         }
-        
-        protected override void OnDisabled()
-        {
-            _wallet.Changed -= WalletOnChanged;
-            _saveService.Add(_turretUpgrade);
-        }
 
-        public void Construct(Transform getTransform, IWallet wallet, ISave save)
+        public void Construct(Transform getTransform, IWallet wallet)
         {
-            _saveService = save;
             _wallet = wallet;
             SetPosition(getTransform);
 
-            _turretUpgrade = GetTurretUpgrade();
+            _turretUpgrade = new TurretUpgrade();
 
             SelectorTurret(_turretUpgrade.CurrentLevel);
             
             _wallet.Changed += WalletOnChanged;
         }
 
-        private TurretUpgrade GetTurretUpgrade() => 
-            _saveService.Get<TurretUpgrade>() ?? new TurretUpgrade();
+        protected override void OnDisabled() => 
+            _wallet.Changed -= WalletOnChanged;
 
         public void TryUpgrade()
         {

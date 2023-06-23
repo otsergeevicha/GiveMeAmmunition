@@ -39,14 +39,8 @@ namespace Infrastructure.GameAI.StateMachine.States
             ServiceLocator.Container.RegisterSingle<ISave>(new SaveLoad());
             ServiceLocator.Container.RegisterSingle<IInputService>(new InputService());
             ServiceLocator.Container.RegisterSingle<IAssetsProvider>(new AssetsProvider());
-            ServiceLocator.Container.RegisterSingle<IWallet>(GetCurrentWallet());
+            ServiceLocator.Container.RegisterSingle<IWallet>(new Wallet(ServiceLocator.Container.Single<ISave>()));
             ServiceLocator.Container.RegisterSingle<IGameFactory>(new GameFactory(ServiceLocator.Container.Single<IAssetsProvider>()));
         }
-
-        private Wallet GetCurrentWallet() => 
-            GetSaveService().Get<Wallet>() ?? new Wallet();
-
-        private ISave GetSaveService() => 
-            ServiceLocator.Container.Single<ISave>();
     }
 }
