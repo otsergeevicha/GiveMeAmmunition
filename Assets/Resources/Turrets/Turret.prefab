@@ -137,6 +137,7 @@ MonoBehaviour:
   _turretLevelTwo: {fileID: 6787164623062949127}
   _turretLevelThree: {fileID: 3119940727536340274}
   _turretLevelFour: {fileID: 2841447054075962363}
+  _vfxUpgrade: {fileID: 433904, guid: 3f97cdb2dde8d7f44a37ce3a93c2bf69, type: 3}
 --- !u!135 &473374997198331836
 SphereCollider:
   m_ObjectHideFlags: 0

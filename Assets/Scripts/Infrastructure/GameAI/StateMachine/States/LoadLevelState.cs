@@ -6,7 +6,9 @@ using Infrastructure.LoadingLogic;
 using Infrastructure.LoadingLogic.ScreenLoading;
 using PlayerLogic;
 using Services.Factory;
+using Services.SaveLoadLogic;
 using Services.StateMachine;
+using Services.Wallet;
 using TurretLogic.Points;
 
 namespace Infrastructure.GameAI.StateMachine.States
@@ -48,7 +50,7 @@ namespace Infrastructure.GameAI.StateMachine.States
             Pool pool = _gameFactory.CreatePool();
             InjectPool(hero, pool, camera);
             SpawnPointTurret[] spawnPointTurret = _gameFactory.CreateTurretPoints().Get();
-            pool.SetPointTurret(spawnPointTurret, _wallet);
+            pool.InjectDependence(spawnPointTurret, _wallet);
             
             _stateMachine.Enter<GameLoopState>();
         }

@@ -4,8 +4,10 @@ using Infrastructure.GameAI.StateMachine.States;
 using Infrastructure.LoadingLogic;
 using Infrastructure.LoadingLogic.ScreenLoading;
 using Services.Factory;
+using Services.SaveLoadLogic;
 using Services.ServiceLocator;
 using Services.StateMachine;
+using Services.Wallet;
 using TurretLogic.Points;
 
 namespace Infrastructure.GameAI.StateMachine
@@ -21,7 +23,8 @@ namespace Infrastructure.GameAI.StateMachine
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain, 
-                    ServiceLocator.Container.Single<IGameFactory>(), ServiceLocator.Container.Single<IWallet>()),
+                    ServiceLocator.Container.Single<IGameFactory>(), 
+                    ServiceLocator.Container.Single<IWallet>()),
                 [typeof(GameLoopState)] = new GameLoopState(this)
             };
         }

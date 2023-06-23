@@ -14,6 +14,7 @@ namespace Infrastructure
         
         //turret
         public const int PricePurchaseTurret = 1;
+        public const int UpgradePriceMultiplier = 10;
     
         //regeneration
         public const float DelayRegeneration = .5f;

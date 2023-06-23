@@ -41,7 +41,7 @@ namespace PlayerLogic.Carrier
 
             if (collision.TryGetComponent(out SpawnPointTurret pointTurret))
             {
-                if (_basket.Cartridge != 0)
+                if (_basket.Cartridge >= 0)
                 {
                     _isReplenishment = true;
                     ReplenishingAmmoTurret(pointTurret.ChildrenGet<TurretShooting>());

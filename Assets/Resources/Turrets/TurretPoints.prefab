@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3601705700616012788}
   - component: {fileID: 3601705700616012786}
   - component: {fileID: 3601705700616012787}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705700616012787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700630692312
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +78,7 @@ GameObject:
   - component: {fileID: 3601705700630692311}
   - component: {fileID: 3601705700630692309}
   - component: {fileID: 3601705700630692310}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -118,8 +119,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705700630692310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700680331164
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ GameObject:
   - component: {fileID: 3601705700680331163}
   - component: {fileID: 3601705700680331161}
   - component: {fileID: 3601705700680331162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -184,8 +186,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705700680331162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700850395880
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +212,7 @@ GameObject:
   - component: {fileID: 3601705700850395879}
   - component: {fileID: 3601705700850395877}
   - component: {fileID: 3601705700850395878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -250,8 +253,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705700850395878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700925181308
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +279,7 @@ GameObject:
   - component: {fileID: 3601705700925181307}
   - component: {fileID: 3601705700925181305}
   - component: {fileID: 3601705700925181306}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -316,8 +320,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705700925181306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700956891985
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +346,7 @@ GameObject:
   - component: {fileID: 3601705700956891984}
   - component: {fileID: 3601705700956891950}
   - component: {fileID: 3601705700956891951}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -382,8 +387,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705700956891951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701026908806
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +413,7 @@ GameObject:
   - component: {fileID: 3601705701026908805}
   - component: {fileID: 3601705701026908803}
   - component: {fileID: 3601705701026908804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -448,8 +454,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701026908804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701083890677
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +480,7 @@ GameObject:
   - component: {fileID: 3601705701083890676}
   - component: {fileID: 3601705701083890674}
   - component: {fileID: 3601705701083890675}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -514,8 +521,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701083890675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701141880708
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +547,7 @@ GameObject:
   - component: {fileID: 3601705701141880707}
   - component: {fileID: 3601705701141880705}
   - component: {fileID: 3601705701141880706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -580,8 +588,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701141880706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701207591376
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +614,7 @@ GameObject:
   - component: {fileID: 3601705701207591343}
   - component: {fileID: 3601705701207591341}
   - component: {fileID: 3601705701207591342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -646,8 +655,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701207591342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701385107739
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +774,7 @@ GameObject:
   - component: {fileID: 3601705701428445573}
   - component: {fileID: 3601705701428445571}
   - component: {fileID: 3601705701428445572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -805,8 +815,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701428445572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,6 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701496002322
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +841,7 @@ GameObject:
   - component: {fileID: 3601705701496002321}
   - component: {fileID: 3601705701496002543}
   - component: {fileID: 3601705701496002320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -871,8 +882,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701496002320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701548006073
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +908,7 @@ GameObject:
   - component: {fileID: 3601705701548006072}
   - component: {fileID: 3601705701548006070}
   - component: {fileID: 3601705701548006071}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -937,8 +949,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701548006071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701951356451
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +975,7 @@ GameObject:
   - component: {fileID: 3601705701951356450}
   - component: {fileID: 3601705701951356448}
   - component: {fileID: 3601705701951356449}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1003,8 +1016,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705701951356449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702056415861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1042,7 @@ GameObject:
   - component: {fileID: 3601705702056415860}
   - component: {fileID: 3601705702056415858}
   - component: {fileID: 3601705702056415859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1069,8 +1083,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702056415859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702106866092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1109,7 @@ GameObject:
   - component: {fileID: 3601705702106866091}
   - component: {fileID: 3601705702106866089}
   - component: {fileID: 3601705702106866090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1135,8 +1150,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702106866090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,6 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702116403911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1176,7 @@ GameObject:
   - component: {fileID: 3601705702116403910}
   - component: {fileID: 3601705702116403908}
   - component: {fileID: 3601705702116403909}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1201,8 +1217,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702116403909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,6 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702169487037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,7 +1243,7 @@ GameObject:
   - component: {fileID: 3601705702169487036}
   - component: {fileID: 3601705702169487034}
   - component: {fileID: 3601705702169487035}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1267,8 +1284,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702169487035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,6 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702197215449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1310,7 @@ GameObject:
   - component: {fileID: 3601705702197215448}
   - component: {fileID: 3601705702197215446}
   - component: {fileID: 3601705702197215447}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1333,8 +1351,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702197215447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702221032449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1377,7 @@ GameObject:
   - component: {fileID: 3601705702221032448}
   - component: {fileID: 3601705702221032478}
   - component: {fileID: 3601705702221032479}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1399,8 +1418,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702221032479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,6 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702282786539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1444,7 @@ GameObject:
   - component: {fileID: 3601705702282786538}
   - component: {fileID: 3601705702282786536}
   - component: {fileID: 3601705702282786537}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1465,8 +1485,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702282786537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,6 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702290983483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1511,7 @@ GameObject:
   - component: {fileID: 3601705702290983482}
   - component: {fileID: 3601705702290983480}
   - component: {fileID: 3601705702290983481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1531,8 +1552,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702290983481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,6 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702349433284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1578,7 @@ GameObject:
   - component: {fileID: 3601705702349433283}
   - component: {fileID: 3601705702349433281}
   - component: {fileID: 3601705702349433282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1597,8 +1619,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702349433282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,6 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702649128430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1645,7 @@ GameObject:
   - component: {fileID: 3601705702649128429}
   - component: {fileID: 3601705702649128427}
   - component: {fileID: 3601705702649128428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -1663,8 +1686,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601705702649128428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,3 +1700,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}

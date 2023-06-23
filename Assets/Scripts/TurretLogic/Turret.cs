@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using Infrastructure;
 using Plugins.MonoCache;
+using Services.SaveLoadLogic;
+using Services.Wallet;
 using TurretLogic.AllLevelTurret;
 using UnityEngine;
 
@@ -20,12 +23,17 @@ namespace TurretLogic
         [SerializeField] private TurretLevelTwo _turretLevelTwo;
         [SerializeField] private TurretLevelThree _turretLevelThree;
         [SerializeField] private TurretLevelFour _turretLevelFour;
-        
+
         [SerializeField] private Transform _vfxUpgrade;
 
         private Dictionary<int, Transform[]> _turrets;
         private Vector3 _oldPoint;
-        public bool Purchased;
+        private IWallet _wallet;
+        private Transform _upgradeCircle;
+        private TurretUpgrade _turretUpgrade;
+        private ISave _saveService;
+
+        public bool Purchased { get; private set; }
 
         private void Awake()
         {
@@ -36,8 +44,51 @@ namespace TurretLogic
                 [(int)TypeTurret.LevelThree] = _turretLevelThree.Get(),
                 [(int)TypeTurret.LevelFour] = _turretLevelFour.Get()
             };
+        }
+        
+        protected override void OnDisabled()
+        {
+            _wallet.Changed -= WalletOnChanged;
+            _saveService.Add(_turretUpgrade);
+        }
 
-            SelectorTurret((int)TypeTurret.LevelOne);
+        public void Construct(Transform getTransform, IWallet wallet, ISave save)
+        {
+            _saveService = save;
+            _wallet = wallet;
+            SetPosition(getTransform);
+
+            _turretUpgrade = GetTurretUpgrade();
+
+            SelectorTurret(_turretUpgrade.CurrentLevel);
+            
+            _wallet.Changed += WalletOnChanged;
+        }
+
+        private TurretUpgrade GetTurretUpgrade() => 
+            _saveService.Get<TurretUpgrade>() ?? new TurretUpgrade();
+
+        public void TryUpgrade()
+        {
+            if (_turretUpgrade.GetReady)
+            {
+                _wallet.Spend(_turretUpgrade.Price);
+                SelectorTurret(_turretUpgrade.LevelUpgrade);
+            }
+        }
+
+        public void Purchase(Transform whiteCircle)
+        {
+            if (_wallet.Check(Constants.PricePurchaseTurret))
+            {
+                _wallet.Spend(Constants.PricePurchaseTurret);
+
+                Purchased = true;
+                gameObject.SetActive(true);
+
+                if (whiteCircle != null)
+                    Destroy(whiteCircle.gameObject);
+            }
         }
 
         public Vector3 GetSpawnPoint(int typeTurret) =>
@@ -45,10 +96,20 @@ namespace TurretLogic
                 ? TryGetNextPoint(_turrets[typeTurret])
                 : Vector3.zero;
 
-        public void SetPosition(Transform getTransform)
+        private void WalletOnChanged(int currentMoney)
         {
-            transform.position = getTransform.position;
-            transform.parent = getTransform;
+            if (currentMoney >= _turretUpgrade.Price)
+            {
+                _turretUpgrade.SetReady(true);
+                _upgradeCircle = Instantiate(_vfxUpgrade, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                _turretUpgrade.SetReady(false);
+                
+                if (_upgradeCircle!=null) 
+                    Destroy(_upgradeCircle.gameObject);
+            }
         }
 
         private void SelectorTurret(int typeGun)
@@ -56,6 +117,14 @@ namespace TurretLogic
             foreach (var value in _turrets)
                 value.Value[0].gameObject
                     .SetActive(value.Key == typeGun);
+        }
+
+        private void SetPosition(Transform getTransform)
+        {
+            Transform ourTransform = transform;
+            
+            ourTransform.position = getTransform.position;
+            ourTransform.parent = getTransform;
         }
 
         private Vector3 TryGetNextPoint(Transform[] spawnPoints)
@@ -67,15 +136,5 @@ namespace TurretLogic
 
         private Vector3 CurrentPoint(Transform[] spawnPoints) =>
             spawnPoints[Random.Range(0, spawnPoints.Length)].position;
-
-        public void Upgrade()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Purchase()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
