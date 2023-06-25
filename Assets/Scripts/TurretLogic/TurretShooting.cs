@@ -75,5 +75,8 @@ namespace TurretLogic
             for (int i = 0; i < _turretGun.Length; i++)
                 _turretGun[i].LookAt(currentTarget);
         }
+
+        public bool RequiredApply() => 
+            _magazine.CheckFull && gameObject.activeInHierarchy;
     }
 }

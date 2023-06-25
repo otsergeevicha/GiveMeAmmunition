@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Infrastructure;
 using Plugins.MonoCache;
 using Services.Wallet;
@@ -33,6 +34,26 @@ namespace TurretLogic
 
         public bool Purchased { get; private set; }
 
+        public int Level
+        {
+            get
+            {
+                if (_turretLevelOne.isActiveAndEnabled)
+                    return _turretLevelOne.GetLevel;
+
+                if (_turretLevelTwo.isActiveAndEnabled)
+                    return _turretLevelTwo.GetLevel;
+                
+                if (_turretLevelThree.isActiveAndEnabled)
+                    return _turretLevelThree.GetLevel;
+                
+                if (_turretLevelFour.isActiveAndEnabled)
+                    return _turretLevelFour.GetLevel;
+
+                return 0;
+            }
+        }
+
         private void Awake()
         {
             _turrets = new Dictionary<int, Transform[]>()
@@ -52,11 +73,11 @@ namespace TurretLogic
             _turretUpgrade = new TurretUpgrade();
 
             SelectorTurret(_turretUpgrade.CurrentLevel);
-            
+
             _wallet.Changed += WalletOnChanged;
         }
 
-        protected override void OnDisabled() => 
+        protected override void OnDisabled() =>
             _wallet.Changed -= WalletOnChanged;
 
         public void TryUpgrade()
@@ -87,6 +108,13 @@ namespace TurretLogic
                 ? TryGetNextPoint(_turrets[typeTurret])
                 : Vector3.zero;
 
+        public void SelectorTurret(int typeGun)
+        {
+            foreach (var value in _turrets)
+                value.Value[0].gameObject
+                    .SetActive(value.Key == typeGun);
+        }
+
         private void WalletOnChanged(int currentMoney)
         {
             if (currentMoney >= _turretUpgrade.Price)
@@ -97,23 +125,16 @@ namespace TurretLogic
             else
             {
                 _turretUpgrade.SetReady(false);
-                
-                if (_upgradeCircle!=null) 
+
+                if (_upgradeCircle != null)
                     Destroy(_upgradeCircle.gameObject);
             }
-        }
-
-        private void SelectorTurret(int typeGun)
-        {
-            foreach (var value in _turrets)
-                value.Value[0].gameObject
-                    .SetActive(value.Key == typeGun);
         }
 
         private void SetPosition(Transform getTransform)
         {
             Transform ourTransform = transform;
-            
+
             ourTransform.position = getTransform.position;
             ourTransform.parent = getTransform;
         }

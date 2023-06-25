@@ -13,6 +13,9 @@ namespace TurretLogic
             _maxSize = size;
         }
 
+        public bool CheckFull 
+            => _size < _maxSize;
+
         public void Spend() => 
             _size--;
 

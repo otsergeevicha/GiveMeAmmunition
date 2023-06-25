@@ -1,17 +1,20 @@
 ﻿using System;
-using TurretLogic;
+using Infrastructure.Factory.Pools;
 
 namespace Infrastructure.SaveLoadLogic
 {
     [Serializable]
     public class DataTurretPool
     {
-        public DataTurretPool() => 
-            Turrets = Array.Empty<Turret>();
+        public TurretData[] TurretDatas = new TurretData[0];
 
-        public Turret[] Turrets { get; private set; }
+        public TurretData[] Read() =>
+            TurretDatas;
 
-        public void Record(Turret[] turrets) =>
-            Turrets = turrets;
+        public void Record(TurretData[] turretDatas) =>
+            TurretDatas = turretDatas;
+
+        public bool Check() =>
+            TurretDatas.Length > 0;
     }
 }

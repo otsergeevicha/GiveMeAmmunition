@@ -1,23 +1,25 @@
-﻿using System;
-using Services.SaveLoadLogic;
+﻿using Services.SaveLoadLogic;
 using UnityEngine;
 
 namespace Infrastructure.SaveLoadLogic
 {
     public class SaveLoad : ISave
     {
+        private readonly Progress _progress;
+        
         public SaveLoad()
         {
-            Progress = PlayerPrefs.HasKey(Constants.Progress)
+            _progress = PlayerPrefs.HasKey(Constants.Progress)
                 ? JsonUtility.FromJson<Progress>(PlayerPrefs.GetString(Constants.Progress))
                 : new Progress();
         }
 
-        public Progress Progress { get; }
+        public Progress AccessProgress() => 
+            _progress;
 
         public void Save()
         {
-            PlayerPrefs.SetString(Constants.Progress, JsonUtility.ToJson(Progress));
+            PlayerPrefs.SetString(Constants.Progress, JsonUtility.ToJson(_progress));
             PlayerPrefs.Save();
         }
     }

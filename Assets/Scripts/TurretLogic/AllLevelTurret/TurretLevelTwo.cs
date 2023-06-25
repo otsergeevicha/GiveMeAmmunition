@@ -12,5 +12,8 @@ namespace TurretLogic.AllLevelTurret
         
         public Transform[] Get() => 
             _levelTwo = new[] { _leftSpawnPoint, _rightSpawnPoint };
+        
+        public int GetLevel => 
+            (int)TypeTurret.LevelTwo;
     }
 }

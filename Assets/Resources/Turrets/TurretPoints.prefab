@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3601705700616012788}
   - component: {fileID: 3601705700616012786}
   - component: {fileID: 3601705700616012787}
+  - component: {fileID: 1493881169871227495}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -66,6 +67,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1493881169871227495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705700616012789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700630692312
 GameObject:
@@ -78,6 +91,7 @@ GameObject:
   - component: {fileID: 3601705700630692311}
   - component: {fileID: 3601705700630692309}
   - component: {fileID: 3601705700630692310}
+  - component: {fileID: 8783048696498165555}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -133,6 +147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8783048696498165555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705700630692312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700680331164
 GameObject:
@@ -145,6 +171,7 @@ GameObject:
   - component: {fileID: 3601705700680331163}
   - component: {fileID: 3601705700680331161}
   - component: {fileID: 3601705700680331162}
+  - component: {fileID: 5463736849031545840}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -200,6 +227,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5463736849031545840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705700680331164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700850395880
 GameObject:
@@ -212,6 +251,7 @@ GameObject:
   - component: {fileID: 3601705700850395879}
   - component: {fileID: 3601705700850395877}
   - component: {fileID: 3601705700850395878}
+  - component: {fileID: 9050231124526177962}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -267,6 +307,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9050231124526177962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705700850395880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700925181308
 GameObject:
@@ -279,6 +331,7 @@ GameObject:
   - component: {fileID: 3601705700925181307}
   - component: {fileID: 3601705700925181305}
   - component: {fileID: 3601705700925181306}
+  - component: {fileID: 6461817137795318771}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -334,6 +387,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6461817137795318771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705700925181308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705700956891985
 GameObject:
@@ -346,6 +411,7 @@ GameObject:
   - component: {fileID: 3601705700956891984}
   - component: {fileID: 3601705700956891950}
   - component: {fileID: 3601705700956891951}
+  - component: {fileID: 7651147929699460101}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -401,6 +467,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7651147929699460101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705700956891985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701026908806
 GameObject:
@@ -413,6 +491,7 @@ GameObject:
   - component: {fileID: 3601705701026908805}
   - component: {fileID: 3601705701026908803}
   - component: {fileID: 3601705701026908804}
+  - component: {fileID: 4297211053244915991}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -468,6 +547,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4297211053244915991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701026908806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701083890677
 GameObject:
@@ -480,6 +571,7 @@ GameObject:
   - component: {fileID: 3601705701083890676}
   - component: {fileID: 3601705701083890674}
   - component: {fileID: 3601705701083890675}
+  - component: {fileID: 8590195754010854123}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -535,6 +627,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8590195754010854123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701083890677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701141880708
 GameObject:
@@ -547,6 +651,7 @@ GameObject:
   - component: {fileID: 3601705701141880707}
   - component: {fileID: 3601705701141880705}
   - component: {fileID: 3601705701141880706}
+  - component: {fileID: 7767993085521987781}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -602,6 +707,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7767993085521987781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701141880708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701207591376
 GameObject:
@@ -614,6 +731,7 @@ GameObject:
   - component: {fileID: 3601705701207591343}
   - component: {fileID: 3601705701207591341}
   - component: {fileID: 3601705701207591342}
+  - component: {fileID: 2305368764978145182}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -667,6 +785,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2305368764978145182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701207591376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
@@ -774,6 +904,7 @@ GameObject:
   - component: {fileID: 3601705701428445573}
   - component: {fileID: 3601705701428445571}
   - component: {fileID: 3601705701428445572}
+  - component: {fileID: 8304415738799249335}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -829,6 +960,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8304415738799249335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701428445574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701496002322
 GameObject:
@@ -841,6 +984,7 @@ GameObject:
   - component: {fileID: 3601705701496002321}
   - component: {fileID: 3601705701496002543}
   - component: {fileID: 3601705701496002320}
+  - component: {fileID: 6127721856657134005}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -896,6 +1040,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6127721856657134005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701496002322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701548006073
 GameObject:
@@ -908,6 +1064,7 @@ GameObject:
   - component: {fileID: 3601705701548006072}
   - component: {fileID: 3601705701548006070}
   - component: {fileID: 3601705701548006071}
+  - component: {fileID: 5345839936841156170}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -963,6 +1120,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5345839936841156170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701548006073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705701951356451
 GameObject:
@@ -975,6 +1144,7 @@ GameObject:
   - component: {fileID: 3601705701951356450}
   - component: {fileID: 3601705701951356448}
   - component: {fileID: 3601705701951356449}
+  - component: {fileID: 7416532296193981399}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1030,6 +1200,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7416532296193981399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705701951356451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702056415861
 GameObject:
@@ -1042,6 +1224,7 @@ GameObject:
   - component: {fileID: 3601705702056415860}
   - component: {fileID: 3601705702056415858}
   - component: {fileID: 3601705702056415859}
+  - component: {fileID: 7578629097953119475}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1097,6 +1280,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7578629097953119475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702056415861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702106866092
 GameObject:
@@ -1109,6 +1304,7 @@ GameObject:
   - component: {fileID: 3601705702106866091}
   - component: {fileID: 3601705702106866089}
   - component: {fileID: 3601705702106866090}
+  - component: {fileID: 7935137107038803255}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1164,6 +1360,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7935137107038803255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702106866092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702116403911
 GameObject:
@@ -1176,6 +1384,7 @@ GameObject:
   - component: {fileID: 3601705702116403910}
   - component: {fileID: 3601705702116403908}
   - component: {fileID: 3601705702116403909}
+  - component: {fileID: 12422222263533592}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1231,6 +1440,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &12422222263533592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702116403911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702169487037
 GameObject:
@@ -1243,6 +1464,7 @@ GameObject:
   - component: {fileID: 3601705702169487036}
   - component: {fileID: 3601705702169487034}
   - component: {fileID: 3601705702169487035}
+  - component: {fileID: 4850175964908338419}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1298,6 +1520,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4850175964908338419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702169487037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702197215449
 GameObject:
@@ -1310,6 +1544,7 @@ GameObject:
   - component: {fileID: 3601705702197215448}
   - component: {fileID: 3601705702197215446}
   - component: {fileID: 3601705702197215447}
+  - component: {fileID: 2965451931637903914}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1365,6 +1600,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2965451931637903914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702197215449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702221032449
 GameObject:
@@ -1377,6 +1624,7 @@ GameObject:
   - component: {fileID: 3601705702221032448}
   - component: {fileID: 3601705702221032478}
   - component: {fileID: 3601705702221032479}
+  - component: {fileID: 7017683056499448776}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1432,6 +1680,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7017683056499448776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702221032449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702282786539
 GameObject:
@@ -1444,6 +1704,7 @@ GameObject:
   - component: {fileID: 3601705702282786538}
   - component: {fileID: 3601705702282786536}
   - component: {fileID: 3601705702282786537}
+  - component: {fileID: 4523805046309156751}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1499,6 +1760,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4523805046309156751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702282786539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702290983483
 GameObject:
@@ -1511,6 +1784,7 @@ GameObject:
   - component: {fileID: 3601705702290983482}
   - component: {fileID: 3601705702290983480}
   - component: {fileID: 3601705702290983481}
+  - component: {fileID: 5351042130170155848}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1566,6 +1840,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5351042130170155848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702290983483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702349433284
 GameObject:
@@ -1578,6 +1864,7 @@ GameObject:
   - component: {fileID: 3601705702349433283}
   - component: {fileID: 3601705702349433281}
   - component: {fileID: 3601705702349433282}
+  - component: {fileID: 5111430955887599443}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1633,6 +1920,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5111430955887599443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702349433284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}
 --- !u!1 &3601705702649128430
 GameObject:
@@ -1645,6 +1944,7 @@ GameObject:
   - component: {fileID: 3601705702649128429}
   - component: {fileID: 3601705702649128427}
   - component: {fileID: 3601705702649128428}
+  - component: {fileID: 6253473997396176958}
   m_Layer: 9
   m_Name: SpawnPointTurret
   m_TagString: Untagged
@@ -1698,6 +1998,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8e0dacb88a34b28bc10ba6eb777ed90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6253473997396176958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601705702649128430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858979f446e94e34b346cd31336f4ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _vfxFreePlace: {fileID: 476476, guid: 22c40b612022044449a3cead95148403, type: 3}

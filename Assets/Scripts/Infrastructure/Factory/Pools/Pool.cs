@@ -11,8 +11,6 @@ namespace Infrastructure.Factory.Pools
 {
     public class Pool : MonoCache
     {
-        private SpawnPointTurret[] _pointTurrets;
-        
         private GrenadePool _grenadePool;
         private BulletPool _bulletPool;
         private TurretPool _turretPool;
@@ -26,6 +24,9 @@ namespace Infrastructure.Factory.Pools
             _grenadePool = new GrenadePool(_factory);
             _bulletPool = new BulletPool(_factory);
         }
+
+        protected override void OnDisabled() => 
+            _turretPool.CurrentSave();
 
         public void InjectDependence(SpawnPointTurret[] pointTurret, IWallet wallet) => 
             _turretPool = new TurretPool(_factory, pointTurret, this, wallet, ServiceLocator.Container.Single<ISave>());

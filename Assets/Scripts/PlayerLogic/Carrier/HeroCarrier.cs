@@ -39,12 +39,14 @@ namespace PlayerLogic.Carrier
                 ReplenishmentBasket(ammoPoint);
             }
 
-            if (collision.TryGetComponent(out SpawnPointTurret pointTurret))
+            if (collision.TryGetComponent(out TurretPointTrigger trigger))
             {
-                if (_basket.Cartridge != 0)
+                TurretShooting turret = trigger.GetTurret().Get<TurretShooting>();
+            
+                if (turret.RequiredApply() && _basket.Cartridge != 0)
                 {
                     _isReplenishment = true;
-                    ReplenishingAmmoTurret(pointTurret.ChildrenGet<TurretShooting>());
+                    ReplenishingAmmoTurret(turret);
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace Infrastructure.WalletLogic
         public Wallet(ISave saveLoadService)
         {
             _saveLoadService = saveLoadService;
-            _settlementAccount = _saveLoadService.Progress.DataWallet.Read;
+            _settlementAccount = _saveLoadService.AccessProgress().DataWallet.Read();
         }
 
         public event Action<int> Changed;
@@ -24,19 +24,19 @@ namespace Infrastructure.WalletLogic
         {
             _settlementAccount -= Math.Clamp(price, 0, int.MaxValue);
             Notify();
-            Save();
+            WritingSave();
         }
 
         public void Apply(int amountReplenishment)
         {
             _settlementAccount += amountReplenishment;
             Notify();
-            Save();
+            WritingSave();
         }
 
-        private void Save()
+        private void WritingSave()
         {
-            _saveLoadService.Progress.DataWallet.Record(_settlementAccount);
+            _saveLoadService.AccessProgress().DataWallet.Record(_settlementAccount);
             _saveLoadService.Save();
         }
 

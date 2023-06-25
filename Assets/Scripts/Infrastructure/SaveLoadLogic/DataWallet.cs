@@ -5,9 +5,12 @@ namespace Infrastructure.SaveLoadLogic
     [Serializable]
     public class DataWallet
     {
-        public int Read { get; private set; } = 5;
+        public int Money = 2;
 
-        public void Record(int amountMoney) => 
-            Read = amountMoney;
+        public int Read() =>
+            Money;
+
+        public void Record(int amountMoney) =>
+            Money = amountMoney;
     }
 }
