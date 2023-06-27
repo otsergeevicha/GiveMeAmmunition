@@ -7,6 +7,28 @@ namespace Infrastructure
         //saveLoad
         public const string Progress = "Progress";
         
+        //levelConfig
+        public const float TimeLevelOne = 50f;
+        public const float TimeLevelTwo = 50f;
+        public const float TimeLevelThree = 50f;
+        
+        public const string TurtlePath = "Enemies/TurtleShellPBR";
+        public const string SlimePath = "Enemies/SlimePBR";
+        public const string SpiderPath = "Enemies/SpiderPBR";
+        
+        public const string BatPath = "Enemies/BatPBR";
+        public const string EvilMagePath = "Enemies/EvilMagePBR";
+        public const string DragonPath = "Enemies/DragonPBR";
+        
+        public const string GolemPath = "Enemies/GolemPBR";
+        public const string MonsterPlantPath = "Enemies/MonsterPlantPBR";
+        public const string OrcPath = "Enemies/OrcPBR";
+        
+        public const string SkeletonPath = "Enemies/SkeletonPBR";
+        
+        //enemies pool
+        public const int AmountEnemy = 4;
+        
         //hero
         public const int HeroSpeed = 4;
         public const int SizeHeroBasket = 10;

@@ -1,5 +1,4 @@
-﻿using System;
-using Infrastructure;
+﻿using Infrastructure;
 using Plugins.MonoCache;
 using Services.Health;
 using UnityEngine;

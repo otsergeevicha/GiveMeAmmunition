@@ -34,26 +34,6 @@ namespace TurretLogic
 
         public bool Purchased { get; private set; }
 
-        public int Level
-        {
-            get
-            {
-                if (_turretLevelOne.isActiveAndEnabled)
-                    return _turretLevelOne.GetLevel;
-
-                if (_turretLevelTwo.isActiveAndEnabled)
-                    return _turretLevelTwo.GetLevel;
-                
-                if (_turretLevelThree.isActiveAndEnabled)
-                    return _turretLevelThree.GetLevel;
-                
-                if (_turretLevelFour.isActiveAndEnabled)
-                    return _turretLevelFour.GetLevel;
-
-                return 0;
-            }
-        }
-
         private void Awake()
         {
             _turrets = new Dictionary<int, Transform[]>()

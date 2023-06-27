@@ -1,5 +1,6 @@
 ﻿using Ammo.Ammunition;
 using CameraLogic;
+using EnemyLogic;
 using Infrastructure.Factory.Pools;
 using PlayerLogic;
 using Services.Assets;
@@ -49,5 +50,9 @@ namespace Infrastructure.Factory
         public Bullet CreateBullet() =>
             _assetsProvider.InstantiateEntity(Constants.BulletPath)
                 .GetComponent<Bullet>();
+
+        public Enemy CreateEnemy(string typeEnemy) => 
+            _assetsProvider.InstantiateEntity(typeEnemy)
+                .GetComponent<Enemy>();
     }
 }

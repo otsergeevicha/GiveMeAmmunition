@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Ammo.Ammunition;
+using EnemyLogic;
 using Plugins.MonoCache;
 using Services.Factory;
-using Services.SaveLoadLogic;
 using Services.ServiceLocator;
 using Services.Wallet;
 using TurretLogic.Points;
@@ -14,6 +14,7 @@ namespace Infrastructure.Factory.Pools
         private GrenadePool _grenadePool;
         private BulletPool _bulletPool;
         private TurretPool _turretPool;
+        private EnemiesPool _enemiesPool;
 
         private IGameFactory _factory;
 
@@ -25,11 +26,11 @@ namespace Infrastructure.Factory.Pools
             _bulletPool = new BulletPool(_factory);
         }
 
-        protected override void OnDisabled() => 
-            _turretPool.CurrentSave();
-
         public void InjectDependence(SpawnPointTurret[] pointTurret, IWallet wallet) => 
-            _turretPool = new TurretPool(_factory, pointTurret, this, wallet, ServiceLocator.Container.Single<ISave>());
+            _turretPool = new TurretPool(_factory, pointTurret, this, wallet);
+
+        public void CreateEnemies(string getOneTypeEnemy, string getTwoTypeEnemy, string getThreeTypeEnemy) => 
+            _enemiesPool = new EnemiesPool(_factory, getOneTypeEnemy, getTwoTypeEnemy, getThreeTypeEnemy);
 
         public Bullet TryGetBullet() =>
             _bulletPool.GetBullets().FirstOrDefault(bullet =>
@@ -38,5 +39,9 @@ namespace Infrastructure.Factory.Pools
         public Grenade TryGetGrenade() =>
             _grenadePool.GetGrenades().FirstOrDefault(grenade =>
                 grenade.isActiveAndEnabled == false);
+
+        public Enemy TryGetEnemy() =>
+            _enemiesPool.GetEnemies().FirstOrDefault(enemy =>
+                enemy.isActiveAndEnabled == false);
     }
 }

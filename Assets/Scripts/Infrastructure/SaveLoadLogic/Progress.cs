@@ -6,12 +6,8 @@ namespace Infrastructure.SaveLoadLogic
     public class Progress
     {
         public DataWallet DataWallet;
-        public DataTurretPool DataTurretPool;
 
-        public Progress()
-        {
+        public Progress() => 
             DataWallet = new DataWallet();
-            DataTurretPool = new DataTurretPool();
-        }
     }
 }
