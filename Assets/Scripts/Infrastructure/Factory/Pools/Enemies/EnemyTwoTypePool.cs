@@ -1,19 +1,20 @@
 ﻿using EnemyLogic;
 using Services.Factory;
+using Services.Factory.Pools;
 
-namespace Infrastructure.Factory.Pools
+namespace Infrastructure.Factory.Pools.Enemies
 {
-    public class EnemyThreeTypePool : IEnemyPool
+    public class EnemyTwoTypePool : IEnemyPool
     {
         private readonly Enemy[] _pool;
-
-        public EnemyThreeTypePool(IGameFactory factory, string threeTypeEnemy)
+        
+        public EnemyTwoTypePool(IGameFactory factory, string twoTypeEnemy)
         {
             _pool = new Enemy[Constants.AmountEnemy];
 
             for (int i = 0; i < _pool.Length; i++)
             {
-                Enemy enemy = factory.CreateEnemy(threeTypeEnemy);
+                Enemy enemy = factory.CreateEnemy(twoTypeEnemy);
                 enemy.gameObject.SetActive(false);
                 _pool[i] = enemy;
             }

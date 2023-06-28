@@ -1,6 +1,6 @@
 ﻿using EnemyLogic;
 
-namespace Infrastructure.Factory.Pools
+namespace Services.Factory.Pools
 {
     public interface IEnemyPool
     {

@@ -4,6 +4,9 @@ namespace Infrastructure
 {
     public static class Constants
     {
+        //spawner
+        public const int DelaySpawnEnemy = 500;
+
         //saveLoad
         public const string Progress = "Progress";
         

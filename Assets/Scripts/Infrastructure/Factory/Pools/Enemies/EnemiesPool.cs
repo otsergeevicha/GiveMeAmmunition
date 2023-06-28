@@ -2,7 +2,7 @@
 using EnemyLogic;
 using Services.Factory;
 
-namespace Infrastructure.Factory.Pools
+namespace Infrastructure.Factory.Pools.Enemies
 {
     enum TypeEnemy
     {

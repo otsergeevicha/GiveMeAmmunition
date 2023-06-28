@@ -3,7 +3,7 @@ using Services.Wallet;
 using TurretLogic;
 using TurretLogic.Points;
 
-namespace Infrastructure.Factory.Pools
+namespace Infrastructure.Factory.Pools.Turrets
 {
     public class TurretPool
     {

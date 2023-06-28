@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Factory.Pools
+namespace Infrastructure.Factory.Pools.Turrets
 {
     [Serializable]
     public class TurretData
