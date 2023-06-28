@@ -29,7 +29,7 @@ namespace Infrastructure.Factory.Pools
         public void InjectDependence(SpawnPointTurret[] pointTurret, IWallet wallet) => 
             _turretPool = new TurretPool(_factory, pointTurret, this, wallet);
 
-        public void CreateEnemies(string getOneTypeEnemy, string getTwoTypeEnemy, string getThreeTypeEnemy) => 
+        public void CreateEnemiesPool(string getOneTypeEnemy, string getTwoTypeEnemy, string getThreeTypeEnemy) => 
             _enemiesPool = new EnemiesPool(_factory, getOneTypeEnemy, getTwoTypeEnemy, getThreeTypeEnemy);
 
         public Bullet TryGetBullet() =>
@@ -40,8 +40,7 @@ namespace Infrastructure.Factory.Pools
             _grenadePool.GetGrenades().FirstOrDefault(grenade =>
                 grenade.isActiveAndEnabled == false);
 
-        public Enemy TryGetEnemy() =>
-            _enemiesPool.GetEnemies().FirstOrDefault(enemy =>
-                enemy.isActiveAndEnabled == false);
+        public Enemy TryGetEnemy(int typeEnemy) =>
+            _enemiesPool.TryGet(typeEnemy);
     }
 }

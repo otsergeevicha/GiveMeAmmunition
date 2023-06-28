@@ -1,33 +1,46 @@
-﻿using EnemyLogic;
+﻿using System.Linq;
+using EnemyLogic;
 using Services.Factory;
 
 namespace Infrastructure.Factory.Pools
 {
+    enum TypeEnemy
+    {
+        One = 0,
+        Two = 1,
+        Three = 2
+    }
     public class EnemiesPool
     {
-        private readonly Enemy[] _enemies;
+        private readonly EnemyOneTypePool _oneTypePool;
+        private readonly EnemyTwoTypePool _twoTypePool;
+        private readonly EnemyThreeTypePool _threeTypePool;
 
         public EnemiesPool(IGameFactory factory, string oneTypeEnemy, string twoTypeEnemy, string threeTypeEnemy)
         {
-            _enemies = new Enemy[Constants.AmountEnemy];
-
-            for (int i = 0; i < _enemies.Length; i++)
-            {
-                Enemy enemy = factory.CreateEnemy(oneTypeEnemy);
-                enemy.gameObject.SetActive(false);
-                _enemies[i] = enemy;
-                
-                Enemy enemy1 = factory.CreateEnemy(twoTypeEnemy);
-                enemy1.gameObject.SetActive(false);
-                _enemies[i+1] = enemy1;
-                
-                Enemy enemy2 = factory.CreateEnemy(threeTypeEnemy);
-                enemy2.gameObject.SetActive(false);
-                _enemies[i+2] = enemy2;
-            }
+            _oneTypePool = new EnemyOneTypePool(factory, oneTypeEnemy);
+            _twoTypePool = new EnemyTwoTypePool(factory, twoTypeEnemy);
+            _threeTypePool = new EnemyThreeTypePool(factory, threeTypeEnemy);
         }
 
-        public Enemy[] GetEnemies() =>
-            _enemies;
+        public Enemy TryGet(int typeEnemy)
+        {
+            return typeEnemy switch
+            {
+                (int)TypeEnemy.One => 
+                    GetOneType(),
+                (int)TypeEnemy.Two => 
+                    _twoTypePool.Get().FirstOrDefault(enemy => 
+                        enemy.isActiveAndEnabled == false),
+                (int)TypeEnemy.Three => 
+                    _threeTypePool.Get().FirstOrDefault(enemy => 
+                        enemy.isActiveAndEnabled == false),
+                _ => GetOneType()
+            };
+        }
+
+        private Enemy GetOneType() =>
+            _oneTypePool.Get().FirstOrDefault(enemy =>
+                enemy.isActiveAndEnabled == false);
     }
 }

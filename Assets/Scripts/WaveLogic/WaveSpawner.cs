@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Threading;
-using EnemyLogic;
 using Infrastructure;
 using Infrastructure.Factory.Pools;
-using Services.Factory;
 using UnityEngine;
 
 namespace WaveLogic
@@ -45,14 +43,14 @@ namespace WaveLogic
             if (_isLaunch) 
                 _tokenLaunched.Cancel();
 
-            _pool.CreateEnemies(_config.Get.OneTypeEnemy, _config.Get.TwoTypeEnemy, _config.Get.ThreeTypeEnemy);
+            _pool.CreateEnemiesPool(_config.Get.OneTypeEnemy, _config.Get.TwoTypeEnemy, _config.Get.ThreeTypeEnemy);
             
             _isLaunch = true;
 
-            LaunchLevel(_pool.TryGetEnemy());
+            LaunchLevel();
         }
 
-        private async void LaunchLevel(Enemy enemy)
+        private async void LaunchLevel()
         {
             
         }
