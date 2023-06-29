@@ -6,6 +6,9 @@ namespace Infrastructure
     {
         //spawner
         public const int DelaySpawnEnemy = 500;
+        
+        //spawn points enemy
+        public const string EnemyPortalsPath = "Portals/PortalPoints";
 
         //saveLoad
         public const string Progress = "Progress";

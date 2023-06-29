@@ -1,6 +1,7 @@
 ﻿using Ammo.Ammunition;
 using CameraLogic;
 using EnemyLogic;
+using Infrastructure.Factory;
 using Infrastructure.Factory.Pools;
 using PlayerLogic;
 using Services.ServiceLocator;
@@ -21,5 +22,6 @@ namespace Services.Factory
         Grenade CreateGrenade();
         Bullet CreateBullet();
         Enemy CreateEnemy(string typeEnemy);
+        EnemyPortals CreateEnemyPortals();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AbilityLogic;
 using Ammo;
 using CameraLogic;
+using Infrastructure.Factory;
 using Infrastructure.Factory.Pools;
 using Infrastructure.LoadingLogic;
 using Infrastructure.LoadingLogic.ScreenLoading;
@@ -9,6 +10,7 @@ using Services.Factory;
 using Services.StateMachine;
 using Services.Wallet;
 using TurretLogic.Points;
+using WaveLogic;
 
 namespace Infrastructure.GameAI.StateMachine.States
 {
@@ -19,6 +21,7 @@ namespace Infrastructure.GameAI.StateMachine.States
         private readonly LoadingCurtain _loadingCurtain;
         private readonly IGameFactory _gameFactory;
         private readonly IWallet _wallet;
+        private WaveSpawner _waveSpawner;
 
         public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
             IGameFactory gameFactory, IWallet wallet)
@@ -50,6 +53,9 @@ namespace Infrastructure.GameAI.StateMachine.States
             InjectPool(hero, pool, camera);
             SpawnPointTurret[] spawnPointTurret = _gameFactory.CreateTurretPoints().Get();
             pool.InjectDependence(spawnPointTurret, _wallet);
+            EnemyPortals enemyPortals = _gameFactory.CreateEnemyPortals();
+            enemyPortals.FirstSet();
+            _waveSpawner = new WaveSpawner((int)IndexLevel.One, enemyPortals.GetPortals(), pool);
             
             _stateMachine.Enter<GameLoopState>();
         }

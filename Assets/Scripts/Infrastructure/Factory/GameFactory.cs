@@ -54,5 +54,9 @@ namespace Infrastructure.Factory
         public Enemy CreateEnemy(string typeEnemy) => 
             _assetsProvider.InstantiateEntity(typeEnemy)
                 .GetComponent<Enemy>();
+
+        public EnemyPortals CreateEnemyPortals() => 
+            _assetsProvider.InstantiateEntity(Constants.EnemyPortalsPath)
+                .GetComponent<EnemyPortals>();
     }
 }
