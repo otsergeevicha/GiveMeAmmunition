@@ -30,12 +30,12 @@ namespace AmmoRepository
             }
             else
             {
-                CallAirDrop();
+                _ = CallAirDrop();
                 return 0;
             }
         }
 
-        private async void CallAirDrop()
+        private async UniTaskVoid CallAirDrop()
         {
             await UniTask.Delay(TimeSpan.FromSeconds(Constants.TimeSpawnAirDrop));
             _depot.Replenishment();

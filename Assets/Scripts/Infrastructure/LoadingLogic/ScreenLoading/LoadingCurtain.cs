@@ -20,9 +20,9 @@ namespace Infrastructure.LoadingLogic.ScreenLoading
         }
 
         public void Hide() => 
-            FadeIn();
+           _ = FadeIn();
 
-        private async void FadeIn()
+        private async UniTaskVoid FadeIn()
         {
             while (_curtain.alpha > 0)
             {

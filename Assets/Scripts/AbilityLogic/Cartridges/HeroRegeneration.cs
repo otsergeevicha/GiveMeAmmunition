@@ -19,16 +19,16 @@ namespace AbilityLogic.Cartridges
         public bool IsWaiting =>
             _isWaiting;
         
-        public async void Launch(int delayRegeneration)
+        public async UniTaskVoid Launch(int delayRegeneration)
         {
             _isWaiting = true;
             await UniTask.Delay(delayRegeneration);
             _isWaiting = false;
             
-            Replenishment();
+            _ = Replenishment();
         }
         
-        private async void Replenishment()
+        private async UniTaskVoid Replenishment()
         {
             _isReplenishment = true;
 

@@ -36,7 +36,7 @@ namespace PlayerLogic.Carrier
             {
                 _isReplenishment = true;
                 _hero.SetLoaded(true);
-                ReplenishmentBasket(ammoPoint);
+                _ = ReplenishmentBasket(ammoPoint);
             }
 
             if (collision.TryGetComponent(out TurretPointTrigger trigger))
@@ -46,7 +46,7 @@ namespace PlayerLogic.Carrier
                 if (turret.RequiredApply() && _basket.Cartridge != 0)
                 {
                     _isReplenishment = true;
-                    ReplenishingAmmoTurret(turret);
+                    _= ReplenishingAmmoTurret(turret);
                 }
             }
         }
@@ -63,7 +63,7 @@ namespace PlayerLogic.Carrier
         private void ChangeStatusCarrier() =>
             _hero.SetLoaded(false);
 
-        private async void ReplenishingAmmoTurret(TurretShooting turret)
+        private async UniTaskVoid ReplenishingAmmoTurret(TurretShooting turret)
         {
             while (_isReplenishment)
             {
@@ -72,7 +72,7 @@ namespace PlayerLogic.Carrier
             }
         }
 
-        private async void ReplenishmentBasket(AmmoPoint depot)
+        private async UniTaskVoid ReplenishmentBasket(AmmoPoint depot)
         {
             while (_isReplenishment)
             {

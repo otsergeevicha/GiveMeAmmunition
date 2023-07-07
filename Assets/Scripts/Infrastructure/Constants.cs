@@ -5,7 +5,7 @@ namespace Infrastructure
     public static class Constants
     {
         //spawner
-        public const int DelaySpawnEnemy = 500;
+        public const int DelaySpawnEnemy = 3000;
         
         //spawn points enemy
         public const string EnemyPortalsPath = "Portals/PortalPoints";
@@ -14,9 +14,9 @@ namespace Infrastructure
         public const string Progress = "Progress";
         
         //levelConfig
-        public const float TimeLevelOne = 50f;
-        public const float TimeLevelTwo = 50f;
-        public const float TimeLevelThree = 50f;
+        public const float TimeLevelOne = 5000f;
+        public const float TimeLevelTwo = 5000f;
+        public const float TimeLevelThree = 5000f;
         
         public const string TurtlePath = "Enemies/TurtleShellPBR";
         public const string SlimePath = "Enemies/SlimePBR";

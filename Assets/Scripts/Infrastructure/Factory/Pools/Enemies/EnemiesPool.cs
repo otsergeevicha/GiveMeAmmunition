@@ -35,7 +35,7 @@ namespace Infrastructure.Factory.Pools.Enemies
                 (int)TypeEnemy.Three => 
                     _threeTypePool.Get().FirstOrDefault(enemy => 
                         enemy.isActiveAndEnabled == false),
-                _ => GetOneType()
+                _ => null
             };
         }
 

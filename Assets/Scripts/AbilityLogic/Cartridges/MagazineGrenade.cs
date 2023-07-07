@@ -38,7 +38,7 @@ namespace AbilityLogic.Cartridges
             if (_size < _maxSize)
             {
                 _regeneration.StopReplenishment();
-                _regeneration.Launch(Constants.DelayRegenerationMagazine);
+                _ = _regeneration.Launch(Constants.DelayRegenerationMagazine);
             }
         }
     }

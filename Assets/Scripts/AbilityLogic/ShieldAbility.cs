@@ -21,9 +21,9 @@ namespace AbilityLogic
             (int)IndexAbility.Shield;
 
         public override void Cast() => 
-            OffShield();
- 
-        private async void OffShield()
+            _ = OffShield();
+
+        private async UniTaskVoid OffShield()
         {
             _vfx.Play();
             await UniTask.Delay(Constants.TimeLifeShield);

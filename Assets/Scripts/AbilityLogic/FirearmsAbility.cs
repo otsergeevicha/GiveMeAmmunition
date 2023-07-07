@@ -41,7 +41,7 @@ namespace AbilityLogic
         public override void Cast()
         {
             _isAttack = true;
-            ImitationQueue();
+            _ = ImitationQueue();
         }
 
         private void OffShoot()
@@ -50,7 +50,7 @@ namespace AbilityLogic
             _shootToken.Cancel();
         }
 
-        private async void ImitationQueue()
+        private async UniTaskVoid ImitationQueue()
         {
             while (_isAttack)
             {

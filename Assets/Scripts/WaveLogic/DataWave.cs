@@ -2,21 +2,31 @@
 {
     public class DataWave
     {
-        public void InjectDependency(int currentLevel, float timeLevel, 
+        private int _currentLevel;
+        private float _timeLevel;
+        private string _oneTypeEnemy;
+        private string _twoTypeEnemy;
+        private string _threeTypeEnemy;
+
+        public void InjectDependency(int currentLevel, float timeLevel,
             string oneTypeEnemy, string twoTypeEnemy, string threeTypeEnemy)
         {
-            ThreeTypeEnemy = threeTypeEnemy;
-            TwoTypeEnemy = twoTypeEnemy;
-            OneTypeEnemy = oneTypeEnemy;
-            
-            TimeLevel = timeLevel;
-            CurrentLevel = currentLevel;
+            _threeTypeEnemy = threeTypeEnemy;
+            _twoTypeEnemy = twoTypeEnemy;
+            _oneTypeEnemy = oneTypeEnemy;
+            _timeLevel = timeLevel;
+            _currentLevel = currentLevel;
         }
 
-        public float TimeLevel { get; private set; }
-        public int CurrentLevel { get; private set; }
-        public string OneTypeEnemy { get; private set; }
-        public string TwoTypeEnemy { get; private set; }
-        public string ThreeTypeEnemy { get; private set; }
+        public float TimeLevel() => 
+            _timeLevel;
+        public int CurrentLevel() => 
+            _currentLevel;
+        public string OneTypeEnemy() => 
+            _oneTypeEnemy;
+        public string TwoTypeEnemy() => 
+            _twoTypeEnemy;
+        public string ThreeTypeEnemy() => 
+            _threeTypeEnemy;
     }
 }

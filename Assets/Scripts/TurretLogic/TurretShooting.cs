@@ -35,7 +35,7 @@ namespace TurretLogic
                 return;
             
             _isAttack = true;
-            ImitationQueue(enemy.transform);
+            _ = ImitationQueue(enemy.transform);
         }
 
         private void OnTriggerExit(Collider collision)
@@ -54,7 +54,7 @@ namespace TurretLogic
         public void Inject(Pool pool) => 
             _pool = pool;
 
-        private async void ImitationQueue(Transform currentTarget)
+        private async UniTaskVoid ImitationQueue(Transform currentTarget)
         {
             while (_isAttack)
             {
