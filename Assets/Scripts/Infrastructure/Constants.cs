@@ -14,9 +14,9 @@ namespace Infrastructure
         public const string Progress = "Progress";
         
         //levelConfig
-        public const float TimeLevelOne = 5000f;
-        public const float TimeLevelTwo = 5000f;
-        public const float TimeLevelThree = 5000f;
+        public const float TimeLevelOne = 10f;
+        public const float TimeLevelTwo = 10f;
+        public const float TimeLevelThree = 10f;
         
         public const string TurtlePath = "Enemies/TurtleShellPBR";
         public const string SlimePath = "Enemies/SlimePBR";

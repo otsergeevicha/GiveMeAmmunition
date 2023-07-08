@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 using EnemyLogic;
@@ -7,7 +6,6 @@ using Infrastructure;
 using Infrastructure.Factory.Pools;
 using Infrastructure.Factory.Pools.Enemies;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace WaveLogic
 {
@@ -40,33 +38,35 @@ namespace WaveLogic
 
         private async UniTaskVoid StartSpawning()
         {
-            float lifeTimeLevel = _waveConfigurator.Get().TimeLevel();
-            float delayOpenNewPortal = lifeTimeLevel / _spawnPoints.Length;
+            float delayOpenNewPortal = DelayOpenNewPortal();
             float portalTimer = delayOpenNewPortal;
 
             await foreach (var _ in UniTaskAsyncEnumerable.EveryUpdate())
             {
-                lifeTimeLevel -= Time.deltaTime;
                 portalTimer -= Time.deltaTime;
 
-                if (lifeTimeLevel <= float.Epsilon)
-                    _tokenLaunched.Cancel();
-
-                if (portalTimer <= float.Epsilon)
-                {
-                    portalTimer += delayOpenNewPortal;
-
-                    _lastActivePortal++;
-
-                    if (_lastActivePortal == _spawnPoints.Length)
-                        _lastActivePortal = _spawnPoints.Length - 1;
-
-                    _spawnPoints[_lastActivePortal].gameObject.SetActive(true);
-                }
+                if (portalTimer <= float.Epsilon) 
+                    portalTimer = SpawnPortal(portalTimer, delayOpenNewPortal);
 
                 await TryGetSpawnPoint();
             }
         }
+
+        private float SpawnPortal(float portalTimer, float delayOpenNewPortal)
+        {
+            portalTimer += delayOpenNewPortal;
+
+            _lastActivePortal++;
+
+            if (_lastActivePortal == _spawnPoints.Length)
+                _lastActivePortal = _spawnPoints.Length - 1;
+
+            _spawnPoints[_lastActivePortal].gameObject.SetActive(true);
+            return portalTimer;
+        }
+
+        private float DelayOpenNewPortal() => 
+            _waveConfigurator.Get().TimeLevel() / _spawnPoints.Length;
 
         private async UniTask SpawnEnemy()
         {
