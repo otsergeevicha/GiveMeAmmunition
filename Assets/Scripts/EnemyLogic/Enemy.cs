@@ -6,12 +6,13 @@ namespace EnemyLogic
 {
     public class Enemy : MonoCache, IHealth
     {
-        public void TakeDamage(int damage) {}
+        private Vector3 _currentTarget;
 
-        public void OnActive(Vector3 newPosition)
+        public void TakeDamage(int damage)
         {
-            gameObject.SetActive(true);
-            transform.position = newPosition;
         }
+
+        public void InjectTarget(Vector3 newTarget) => 
+            _currentTarget = newTarget;
     }
 }

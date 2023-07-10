@@ -11,7 +11,6 @@ namespace WaveLogic
 {
     public class LevelWave : IWave
     {
-        private readonly CancellationTokenSource _tokenLaunched = new();
         private readonly WaveConfigurator _waveConfigurator;
         private readonly Transform[] _spawnPoints;
         private readonly Pool _pool;
@@ -36,6 +35,19 @@ namespace WaveLogic
             _ = StartSpawning();
         }
 
+        private float SpawnPortal(float portalTimer, float delayOpenNewPortal)
+        {
+            portalTimer += delayOpenNewPortal;
+
+            _lastActivePortal++;
+
+            if (_lastActivePortal == _spawnPoints.Length)
+                _lastActivePortal = _spawnPoints.Length - 1;
+
+            _spawnPoints[_lastActivePortal].gameObject.SetActive(true);
+            return portalTimer;
+        }
+
         private async UniTaskVoid StartSpawning()
         {
             float delayOpenNewPortal = DelayOpenNewPortal();
@@ -52,22 +64,6 @@ namespace WaveLogic
             }
         }
 
-        private float SpawnPortal(float portalTimer, float delayOpenNewPortal)
-        {
-            portalTimer += delayOpenNewPortal;
-
-            _lastActivePortal++;
-
-            if (_lastActivePortal == _spawnPoints.Length)
-                _lastActivePortal = _spawnPoints.Length - 1;
-
-            _spawnPoints[_lastActivePortal].gameObject.SetActive(true);
-            return portalTimer;
-        }
-
-        private float DelayOpenNewPortal() => 
-            _waveConfigurator.Get().TimeLevel() / _spawnPoints.Length;
-
         private async UniTask SpawnEnemy()
         {
             Enemy enemy = _pool.TryGetEnemy(_requiredTypeEnemy);
@@ -75,7 +71,8 @@ namespace WaveLogic
             if (enemy != null)
             {
                 await UniTask.Delay(Constants.DelaySpawnEnemy);
-                enemy.gameObject.GetComponent<Enemy>().OnActive(_currentPosition);
+                enemy.gameObject.SetActive(true);
+                enemy.transform.position = _currentPosition;
 
                 return;
             }
@@ -100,6 +97,9 @@ namespace WaveLogic
                 await UniTask.DelayFrame(1);
             }
         }
+
+        private float DelayOpenNewPortal() => 
+            _waveConfigurator.Get().TimeLevel() / _spawnPoints.Length;
 
         private Transform GetPoint() =>
             _spawnPoints[Random.Range(0, _spawnPoints.Length)];

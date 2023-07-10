@@ -41,7 +41,9 @@ namespace Infrastructure
         public const int AmmunitionDeliveryRate = 500;
 
         //enemy
+        public const int EnemySpeed = 5;
         public const int EnemyDamage = 10;
+        public const int EnemyRadiusCheck = 10;
         
         //turret
         public const int PricePurchaseTurret = 1;
