@@ -1,18 +1,14 @@
-﻿using Plugins.MonoCache;
+﻿using BehaviorDesigner.Runtime;
+using Plugins.MonoCache;
 using Services.Health;
 using UnityEngine;
 
 namespace EnemyLogic
 {
+    [RequireComponent(typeof(EnemyMovement))]
+    [RequireComponent(typeof(BehaviorTree))]
     public class Enemy : MonoCache, IHealth
     {
-        private Vector3 _currentTarget;
-
-        public void TakeDamage(int damage)
-        {
-        }
-
-        public void InjectTarget(Vector3 newTarget) => 
-            _currentTarget = newTarget;
+        public void TakeDamage(int damage) {}
     }
 }

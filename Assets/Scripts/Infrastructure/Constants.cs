@@ -4,6 +4,9 @@ namespace Infrastructure
 {
     public static class Constants
     {
+        //colliders
+        public const int AmountNonAllocColliders = 16;
+        
         //spawner
         public const int DelaySpawnEnemy = 3000;
         
@@ -43,7 +46,8 @@ namespace Infrastructure
         //enemy
         public const int EnemySpeed = 5;
         public const int EnemyDamage = 10;
-        public const int EnemyRadiusCheck = 10;
+        public const int EnemyRadiusCheckTarget = 10;
+        public const int EnemyRadiusCheckAttack = 2;
         
         //turret
         public const int PricePurchaseTurret = 1;
