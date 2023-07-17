@@ -2,6 +2,7 @@
 using System.Linq;
 using Infrastructure;
 using Plugins.MonoCache;
+using Services.Health;
 using Services.Wallet;
 using TurretLogic.AllLevelTurret;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace TurretLogic
     }
 
     [RequireComponent(typeof(TurretShooting))]
-    public class Turret : MonoCache
+    public class Turret : MonoCache, IHealth
     {
         [SerializeField] private TurretLevelOne _turretLevelOne;
         [SerializeField] private TurretLevelTwo _turretLevelTwo;
@@ -59,6 +60,8 @@ namespace TurretLogic
 
         protected override void OnDisabled() =>
             _wallet.Changed -= WalletOnChanged;
+        
+        public void TakeDamage(int damage) {}
 
         public void TryUpgrade()
         {

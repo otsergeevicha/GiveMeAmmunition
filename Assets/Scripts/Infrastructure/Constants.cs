@@ -108,8 +108,12 @@ namespace Infrastructure
         //check device
         public const string KeyboardMouse = "KeyboardMouse";
 
-        //animator
+        //animator hero
         public static readonly int HeroWalkHash = Animator.StringToHash("Walk");
         public static readonly int HeroRollHash = Animator.StringToHash("Roll");
+        
+        //animator enemy
+        public static readonly int EnemyAttack = Animator.StringToHash("Attack");
+        public static readonly int EnemyWalk = Animator.StringToHash("Walk");
     }
 }
