@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.MoveState
 {
     public interface IBotInput
     {

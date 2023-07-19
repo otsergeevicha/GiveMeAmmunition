@@ -4,7 +4,7 @@ using PlayerLogic;
 using TurretLogic;
 using UnityEngine;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.AttackState
 {
     public class BotAttack : Action
     {

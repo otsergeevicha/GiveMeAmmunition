@@ -3,7 +3,7 @@ using BehaviorDesigner.Runtime.Tasks;
 using Infrastructure;
 using UnityEngine;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.AttackState
 {
     public class GetNearbyObject<TNearbyObject, TSharedNearbyObject> : Conditional where TNearbyObject : Component where TSharedNearbyObject : SharedVariable<TNearbyObject>
     {

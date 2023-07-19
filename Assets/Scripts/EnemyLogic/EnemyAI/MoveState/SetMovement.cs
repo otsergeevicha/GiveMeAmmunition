@@ -1,10 +1,11 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using EnemyLogic.EnemyAI.AttackState;
 using Infrastructure;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.MoveState
 {
     public class SetMovement : Action
     {

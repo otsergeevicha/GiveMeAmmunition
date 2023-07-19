@@ -1,7 +1,8 @@
 ﻿using System;
 using BehaviorDesigner.Runtime;
+using EnemyLogic.EnemyAI.MoveState;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.AttackState
 {
     [Serializable]
     public class SharedBotInput : SharedVariable<BotInput>

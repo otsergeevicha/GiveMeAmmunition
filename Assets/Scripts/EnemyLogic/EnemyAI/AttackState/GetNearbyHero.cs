@@ -1,6 +1,6 @@
 ﻿using PlayerLogic;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.AttackState
 {
     public class GetNearbyHero : GetNearbyObject<Hero, SharedHero> {}
 }

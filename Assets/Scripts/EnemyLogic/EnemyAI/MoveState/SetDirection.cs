@@ -2,7 +2,7 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.MoveState
 {
     public class SetDirection : Action
     {

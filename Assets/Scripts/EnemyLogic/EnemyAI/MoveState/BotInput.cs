@@ -1,7 +1,7 @@
 ﻿using Plugins.MonoCache;
 using UnityEngine;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.MoveState
 {
     public class BotInput : MonoCache, IBotInput
     {

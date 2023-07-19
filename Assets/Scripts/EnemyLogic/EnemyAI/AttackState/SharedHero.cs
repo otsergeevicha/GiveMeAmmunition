@@ -2,7 +2,7 @@
 using BehaviorDesigner.Runtime;
 using PlayerLogic;
 
-namespace EnemyLogic
+namespace EnemyLogic.EnemyAI.AttackState
 {
     [Serializable]
     public class SharedHero : SharedVariable<Hero>
