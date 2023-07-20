@@ -1,4 +1,5 @@
-﻿using PlayerLogic.Carrier;
+﻿using Infrastructure;
+using PlayerLogic.Carrier;
 using PlayerLogic.Movements;
 using PlayerLogic.Shooting;
 using Plugins.MonoCache;
@@ -13,13 +14,29 @@ namespace PlayerLogic
     public class Hero : MonoCache, IHealth
     {
         private bool _isLoadedCargo;
+        private HeroHealth _health;
 
-        public void TakeDamage(int damage) {}
+        private void Awake() => 
+            _health = new HeroHealth(Constants.HeroMaxHealth);
+
+        protected override void OnEnabled() => 
+            _health.Died += GameOver;
+
+        protected override void OnDisabled() => 
+            _health.Died -= GameOver;
+
+        public void TakeDamage(int damage) => 
+            _health.ApplyDamage(damage);
 
         public bool IsLoaded() =>
             _isLoadedCargo;
 
         public void SetLoaded(bool newStatus) => 
             _isLoadedCargo = newStatus;
+
+        private void GameOver()
+        {
+            Time.timeScale = 0;
+        }
     }
 }

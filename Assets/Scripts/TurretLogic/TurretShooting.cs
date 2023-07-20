@@ -42,6 +42,7 @@ namespace TurretLogic
         {
             if (!collision.gameObject.TryGetComponent(out Enemy _)) 
                 return;
+            print("+");
             
             _isAttack = false;
             _activeTurretToken.Cancel();

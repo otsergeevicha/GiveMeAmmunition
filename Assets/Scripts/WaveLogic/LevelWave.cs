@@ -87,6 +87,8 @@ namespace WaveLogic
 
             if (currentPosition.gameObject.activeInHierarchy)
             {
+                Debug.Log($"{currentPosition.position} - присваемая позиция");
+                
                 if (currentPosition.position != Vector3.zero)
                 {
                     _currentPosition = currentPosition.position;

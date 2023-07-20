@@ -39,11 +39,13 @@ namespace Infrastructure
         public const int AmountEnemy = 4;
         
         //hero
+        public const int HeroMaxHealth = 100;
         public const int HeroSpeed = 4;
         public const int SizeHeroBasket = 10;
         public const int AmmunitionDeliveryRate = 500;
 
         //enemy
+        public const int EnemyMaxHealth = 50;
         public const int EnemySpeed = 5;
         public const int EnemyDamage = 10;
         public const int EnemyRadiusCheckTarget = 10;
