@@ -22,6 +22,7 @@ namespace TurretLogic
         private Pool _pool;
         private bool _isAttack;
         private MagazineTurret _magazine;
+        private Enemy _enemy;
 
         private void Awake()
         {
@@ -31,21 +32,28 @@ namespace TurretLogic
 
         private void OnTriggerEnter(Collider collision)
         {
-            if (!collision.gameObject.TryGetComponent(out Enemy enemy)) 
-                return;
-            
-            _isAttack = true;
-            _ = ImitationQueue(enemy.transform);
+            if (collision.gameObject.TryGetComponent(out Enemy enemy))
+            {
+                _isAttack = true;
+                _enemy = enemy;
+                _ = ImitationQueue(enemy.transform);
+            }
         }
 
         private void OnTriggerExit(Collider collision)
         {
-            if (!collision.gameObject.TryGetComponent(out Enemy _)) 
-                return;
-            print("+");
-            
-            _isAttack = false;
-            _activeTurretToken.Cancel();
+            if (collision.gameObject.TryGetComponent(out Enemy _))
+            {
+                _isAttack = false;
+                _enemy = null;
+                _activeTurretToken.Cancel();
+            }
+        }
+
+        protected override void UpdateCached()
+        {
+            if (_isAttack) 
+                RotateTurret(_enemy.transform);
         }
 
         public void ApplyAmmo(int newAmmo, Action fulled) => 
@@ -59,8 +67,6 @@ namespace TurretLogic
         {
             while (_isAttack)
             {
-                RotateTurret(currentTarget);
-
                 if (_magazine.Check())
                 {
                     _pool.TryGetBullet().Shot(_turret.GetSpawnPoint((int)TypeTurret.LevelOne), currentTarget.position);
